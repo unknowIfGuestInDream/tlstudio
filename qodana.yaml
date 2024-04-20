@@ -33,10 +33,7 @@ exclude:
   - name: IgnoreResultOfCall
   - name: All
     paths:
-      - docs
-      - demo
       - .github
       - .idea
       - .vscode
       - .settings
-      - core/src/main/java/com/tlcsdm/core/database/DataSourceUtil.java

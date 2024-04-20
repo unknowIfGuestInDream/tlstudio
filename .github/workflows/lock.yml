@@ -1,0 +1,27 @@
+name: 'Lock threads'
+
+on:
+  schedule:
+    - cron: '0 20 */2 * *'
+  workflow_dispatch:
+
+concurrency:
+  group: lock
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dessant/lock-threads@v5
+        with:
+          process-only: 'issues, prs'
+          issue-inactive-days: '7'
+          issue-comment: >
+            This issue has been automatically locked since there has not been any recent activity after it was closed.
+            Please open a new issue.
+          issue-lock-reason: 'resolved'
+          pr-linactive-days: '7'
+          pr-comment: >
+            This pull request has been automatically locked since there has not been any recent activity after it was closed.
+            Please open a new issue or pull request.
+          pr-lock-reason: 'resolved'

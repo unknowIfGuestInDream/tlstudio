@@ -1,0 +1,76 @@
+demo:
+  - changed-files:
+      - any-glob-to-any-file: demo/**
+
+frame:
+  - changed-files:
+      - any-glob-to-any-file: frame/**
+
+login:
+  - changed-files:
+      - any-glob-to-any-file: login/**
+
+smc:
+  - changed-files:
+      - any-glob-to-any-file: smc/**
+
+core:
+  - changed-files:
+      - any-glob-to-any-file: core/**
+
+qe:
+  - changed-files:
+      - any-glob-to-any-file: qe/**
+
+common:
+  - changed-files:
+      - any-glob-to-any-file: common/**
+
+cg:
+  - changed-files:
+      - any-glob-to-any-file: cg/**
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file: [ 'jenkins/**' ,'.mvn/**' ,'.imgbotconfig' ,'.mergify.yml' ,'qodana.yaml' ]
+
+test:
+  - changed-files:
+      - any-glob-to-any-file: [ '*/src/test/**' ]
+
+IDEA:
+  - changed-files:
+      - any-glob-to-any-file: .idea/**
+
+vscode:
+  - changed-files:
+      - any-glob-to-any-file: .vscode/**
+
+eclipse:
+  - changed-files:
+      - any-glob-to-any-file: .settings/**
+
+workflow:
+  - changed-files:
+      - any-glob-to-any-file: .github/**
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: [ 'CHANGELOG.md' ,'LICENSE' ,'README.md' ,'README_zh.md' ,'README_jp.md' ,'docs/**' ]
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file: [ 'pom.xml' ,'**/pom.xml' ]
+
+i18ns:
+  - changed-files:
+      - any-glob-to-any-file: [ '**/i18n/*.properties' ]
+
+release:
+  - changed-files:
+      - any-glob-to-any-file: [ '**/META-INF/MANIFEST.MF' ]
+
+automerge:
+  - changed-files:
+      - any-glob-to-all-files: [ 'README.md', 'README_zh.md', 'README_jp.md' ]
+      - any-glob-to-any-file: [ 'CONTRIBUTORS.md' ]

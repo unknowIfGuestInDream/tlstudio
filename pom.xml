@@ -87,6 +87,7 @@
     <module>features/org.eclipse.swt.tools.feature</module>
   </modules>
 -->
+
 	<licenses>
 		<license>
 			<name>Eclipse Public License 2.0</name>
@@ -435,6 +436,7 @@
 	</dependencyManagement>
 
 	<build>
+		<sourceDirectory>${project.basedir}/src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
@@ -444,6 +446,14 @@
 					<sourceReferences>
 						<generate>true</generate>
 					</sourceReferences>
+					<archive>
+                        <manifestEntries>
+                            <Built-By>Tlcsdm</Built-By>
+                            <Created-By>Tlcsdm</Created-By>
+                            <Build-Time>${maven.build.timestamp}</Build-Time>
+                        </manifestEntries>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -648,6 +658,9 @@
 					<version>${tycho-version}</version>
 					<configuration>
 						<encoding>UTF-8</encoding>
+						<source>17</source>
+                        <target>17</target>
+                        <compilerVersion>17</compilerVersion>
 					</configuration>
 				</plugin>
 				<plugin>

@@ -87,12 +87,16 @@
     <module>features/org.eclipse.swt.tools.feature</module>
   </modules>
 -->
-
   <modules>
-    <module>examples/</module>
-    <module>features/</module>
-    <module>releng/</module>
-    <module>sites/</module>
+    <module>examples/org.eclipse.swt.examples</module>
+    <module>examples/org.eclipse.swt.examples.browser</module>
+    <module>examples/org.eclipse.swt.examples.controls</module>
+    <module>examples/org.eclipse.swt.examples.launcher</module>
+    <module>examples/org.eclipse.swt.examples.layouts</module>
+    <module>examples/org.eclipse.swt.examples.paint</module>
+    <module>features/com.tlcsdm.tlstudio.examples.swt.rcp.feature</module>
+    <module>releng/com.tlcsdm.tlstudio.examples.swt.rcp</module>
+    <module>sites/com.tlcsdm.tlstudio.examples.swt.rcp.product</module>
   </modules>
 
 	<licenses>

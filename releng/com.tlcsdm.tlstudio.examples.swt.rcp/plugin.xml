@@ -22,24 +22,12 @@
    <extension
          point="org.eclipse.ui.views">
       <view
+            category="org.eclipse.swt.examples.category"
             class="com.tlcsdm.tlstudio.examples.swt.rcp.View"
-            name="View"
             id="com.tlcsdm.tlstudio.examples.swt.rcp.view"
-            inject="true">
+            inject="true"
+            name="View">
       </view>
-   </extension>
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="*">
-         <view
-               id="com.tlcsdm.tlstudio.examples.swt.rcp.view"
-               minimized="false"
-               relationship="left"
-               standalone="true"
-               relative="org.eclipse.ui.editorss">
-         </view>
-      </perspectiveExtension>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -58,11 +46,11 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            name="SWT Examples"
+            name="SWT Examples Product"
             application="com.tlcsdm.tlstudio.examples.swt.rcp.application">
          <property
-               name="windowImages"
-               value="icons/eclipse16.png,icons/eclipse32.png,icons/eclipse48.png,icons/eclipse64.png, icons/eclipse128.png,icons/eclipse256.png,icons/eclipse512.png">
+               name="appName"
+               value="SWT Examples Product">
          </property>
       </product>
    </extension>

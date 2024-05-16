@@ -87,9 +87,11 @@
     <module>features/org.eclipse.swt.tools.feature</module>
   </modules>
 -->
+  
   <modules>
-    <module>features/com.tlcsdm.tlstudio.examples.swt.rcp.feature</module>
-    <module>releng/com.tlcsdm.tlstudio.examples.swt.rcp</module>
+    <module>features/</module>
+    <module>releng/</module>
+    <module>sites/</module>
   </modules>
 
 	<licenses>

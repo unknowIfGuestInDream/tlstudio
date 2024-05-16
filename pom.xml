@@ -436,6 +436,7 @@
 	</dependencyManagement>
 
 	<build>
+		<sourceDirectory>${project.basedir}/src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
@@ -445,6 +446,14 @@
 					<sourceReferences>
 						<generate>true</generate>
 					</sourceReferences>
+					<archive>
+                        <manifestEntries>
+                            <Built-By>Tlcsdm</Built-By>
+                            <Created-By>Tlcsdm</Created-By>
+                            <Build-Time>${maven.build.timestamp}</Build-Time>
+                        </manifestEntries>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
 				</configuration>
 				<dependencies>
 					<dependency>

@@ -8,8 +8,9 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package org.eclipse.swt.examples.browserexample;
+package org.eclipse.swt.examples.browser;
 
+import org.eclipse.swt.examples.browserexample.BrowserExample;
 import org.eclipse.swt.widgets.*;
 import org.eclipse.ui.part.*;
 

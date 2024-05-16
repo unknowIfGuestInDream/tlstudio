@@ -3,6 +3,7 @@
 
 <product name="SWT Examples Product" uid="com.tlcsdm.tlstudio.examples.swt.rcp.product" id="com.tlcsdm.tlstudio.examples.swt.rcp.product" application="com.tlcsdm.tlstudio.examples.swt.rcp.application" version="1.0.0.qualifier" type="bundles" includeLaunchers="true" autoIncludeRequirements="true">
 
+
    <configIni use="default">
    </configIni>
 
@@ -11,15 +12,20 @@
       </vmArgsMac>
    </launcherArgs>
 
+   <windowImages/>
+
+
    <launcher name="SWT Examples">
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
 
+
    <vm>
       <windows include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</windows>
    </vm>
+
 
    <plugins>
       <plugin id="bcpg"/>

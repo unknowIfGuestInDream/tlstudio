@@ -4,7 +4,7 @@ Bundle-Name: %plugin.SWTBrowserExample.name
 Bundle-SymbolicName: org.eclipse.swt.examples.browser; singleton:=true
 Bundle-Version: 3.102.0.qualifier
 Bundle-ClassPath: browserexample.jar
-Bundle-Activator: org.eclipse.swt.examples.browserexample.BrowserPlugin
+Bundle-Activator: org.eclipse.swt.examples.browser.BrowserPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui.ide,
@@ -17,4 +17,4 @@ Require-Bundle: org.eclipse.ui.ide,
  org.eclipse.swt,
  org.eclipse.swt.examples
 Bundle-ActivationPolicy: lazy
-Export-Package: org.eclipse.swt.examples.browserexample
+Export-Package: org.eclipse.swt.examples.browser

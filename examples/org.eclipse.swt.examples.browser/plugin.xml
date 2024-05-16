@@ -14,7 +14,7 @@
             name="%view.BrowserExample.name"
             icon="icons/browser_example.gif"
             category="org.eclipse.swt.examples.category"
-            class="org.eclipse.swt.examples.browserexample.BrowserView"
+            class="org.eclipse.swt.examples.browser.BrowserView"
             id="org.eclipse.swt.examples.browserexample.view">
       </view>
    </extension>

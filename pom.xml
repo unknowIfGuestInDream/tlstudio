@@ -87,12 +87,6 @@
     <module>features/org.eclipse.swt.tools.feature</module>
   </modules>
 -->
-  
-  <modules>
-    <module>features/</module>
-    <module>releng/</module>
-    <module>sites/</module>
-  </modules>
 
 	<licenses>
 		<license>
@@ -655,6 +649,9 @@
 					<version>${tycho-version}</version>
 					<configuration>
 						<encoding>UTF-8</encoding>
+						<source>17</source>
+                        <target>17</target>
+                        <compilerVersion>17</compilerVersion>
 					</configuration>
 				</plugin>
 				<plugin>

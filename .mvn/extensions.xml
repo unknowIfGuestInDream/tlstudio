@@ -5,9 +5,4 @@
     <artifactId>tycho-build</artifactId>
     <version>4.0.7</version>
   </extension>
-  <extension>
-    <groupId>org.eclipse.tycho.extras</groupId>
-    <artifactId>tycho-pomless</artifactId>
-    <version>4.0.7</version>
-  </extension>
 </extensions>

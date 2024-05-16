@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="SWT Examples Product" uid="com.tlcsdm.tlstudio.examples.swt.rcp" id="com.tlcsdm.tlstudio.examples.swt.rcp.product" application="com.tlcsdm.tlstudio.examples.swt.rcp.application" version="1.0.0.qualifier" type="bundles" includeLaunchers="true" autoIncludeRequirements="true">
+<product name="SWT Examples Product" uid="com.tlcsdm.tlstudio.examples.swt.rcp.product" id="com.tlcsdm.tlstudio.examples.swt.rcp.product" application="com.tlcsdm.tlstudio.examples.swt.rcp.application" version="1.0.0.qualifier" type="bundles" includeLaunchers="true" autoIncludeRequirements="true">
 
    <configIni use="default">
    </configIni>

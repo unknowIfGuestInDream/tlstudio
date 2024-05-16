@@ -22,24 +22,12 @@
    <extension
          point="org.eclipse.ui.views">
       <view
+            category="org.eclipse.swt.examples.category"
             class="com.tlcsdm.tlstudio.examples.swt.rcp.View"
-            name="View"
             id="com.tlcsdm.tlstudio.examples.swt.rcp.view"
-            inject="true">
+            inject="true"
+            name="View">
       </view>
-   </extension>
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="*">
-         <view
-               id="com.tlcsdm.tlstudio.examples.swt.rcp.view"
-               minimized="false"
-               relationship="left"
-               standalone="true"
-               relative="org.eclipse.ui.editorss">
-         </view>
-      </perspectiveExtension>
    </extension>
    <extension
          point="org.eclipse.ui.menus">

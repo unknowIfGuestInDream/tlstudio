@@ -87,6 +87,14 @@
     <module>features/org.eclipse.swt.tools.feature</module>
   </modules>
 -->
+
+  <modules>
+    <module>examples/</module>
+    <module>features/</module>
+    <module>releng/</module>
+    <module>sites/</module>
+  </modules>
+
 	<licenses>
 		<license>
 			<name>Eclipse Public License 2.0</name>

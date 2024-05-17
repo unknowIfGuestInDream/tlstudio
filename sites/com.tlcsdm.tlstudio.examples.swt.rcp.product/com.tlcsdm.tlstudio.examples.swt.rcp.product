@@ -8,22 +8,31 @@
    </configIni>
 
    <launcherArgs>
+      <programArgs>--launcher.defaultAction openFile
+      </programArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages/>
+   <windowImages i16="/com.tlcsdm.tlstudio.examples.swt.rcp/icons/eclipse16.png" i32="/com.tlcsdm.tlstudio.examples.swt.rcp/icons/eclipse32.png" i48="/com.tlcsdm.tlstudio.examples.swt.rcp/icons/eclipse48.png" i64="/com.tlcsdm.tlstudio.examples.swt.rcp/icons/eclipse64.png" i128="/com.tlcsdm.tlstudio.examples.swt.rcp/icons/eclipse128.png" i256="/com.tlcsdm.tlstudio.examples.swt.rcp/icons/eclipse256.png"/>
 
-
+   <splash
+      location="com.tlcsdm.tlstudio.examples.swt.rcp"
+      startupProgressRect="0,385,600,15"
+      startupMessageRect="7,345,445,20"
+      startupForegroundColor="4B4848" />
    <launcher name="SWT Examples">
-      <win useIco="false">
+      <win useIco="true">
+         <ico path="/com.tlcsdm.tlstudio.examples.swt.rcp.product/logo.ico"/>
          <bmp/>
       </win>
    </launcher>
 
 
    <vm>
-      <windows include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</windows>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</linux>
+      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</macos>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</windows>
    </vm>
 
 
@@ -151,6 +160,8 @@
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <property name="osgi.bundles.defaultStartLevel" value="4" />
+      <property name="org.eclipse.update.reconcile" value="false" />
    </configurations>
 
    <preferencesInfo>

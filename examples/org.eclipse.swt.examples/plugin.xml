@@ -65,10 +65,15 @@
             mainClass="org.eclipse.swt.examples.hoverhelp.HoverHelp">
       </program>
    </item>
+   <category
+         category="org.eclipse.swt.examples.launchStandaloneCategory"
+         id="org.eclipse.swt.examples.launch.helloworld"
+         name="helloworld">
+   </category>
    <item
          name="%launchitem.HelloWorld1.name"
          description="%launchitem.HelloWorld1.description"
-         category="org.eclipse.swt.examples.launchStandaloneCategory"
+         category="org.eclipse.swt.examples.launch.helloworld"
          id="org.eclipse.swt.examples.helloworld1.standalonelauncher">
       <program
             pluginId="org.eclipse.swt.examples"
@@ -78,7 +83,7 @@
    <item
          name="%launchitem.HelloWorld2.name"
          description="%launchitem.HelloWorld2.description"
-         category="org.eclipse.swt.examples.launchStandaloneCategory"
+         category="org.eclipse.swt.examples.launch.helloworld"
          id="org.eclipse.swt.examples.helloworld2.standalonelauncher">
       <program
             pluginId="org.eclipse.swt.examples"
@@ -88,7 +93,7 @@
    <item
          name="%launchitem.HelloWorld3.name"
          description="%launchitem.HelloWorld3.description"
-         category="org.eclipse.swt.examples.launchStandaloneCategory"
+         category="org.eclipse.swt.examples.launch.helloworld"
          id="org.eclipse.swt.examples.helloworld3.standalonelauncher">
       <program
             pluginId="org.eclipse.swt.examples"
@@ -98,7 +103,7 @@
    <item
          name="%launchitem.HelloWorld4.name"
          description="%launchitem.HelloWorld4.description"
-         category="org.eclipse.swt.examples.launchStandaloneCategory"
+         category="org.eclipse.swt.examples.launch.helloworld"
          id="org.eclipse.swt.examples.helloworld4.standalonelauncher">
       <program
             pluginId="org.eclipse.swt.examples"
@@ -108,7 +113,7 @@
    <item
          name="%launchitem.HelloWorld5.name"
          description="%launchitem.HelloWorld5.description"
-         category="org.eclipse.swt.examples.launchStandaloneCategory"
+         category="org.eclipse.swt.examples.launch.helloworld"
          id="org.eclipse.swt.examples.helloworld5.standalonelauncher">
       <program
             pluginId="org.eclipse.swt.examples"

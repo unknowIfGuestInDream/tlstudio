@@ -3,7 +3,6 @@
 
 <product name="SWT Examples Product" uid="com.tlcsdm.tlstudio.examples.swt.rcp.product" id="com.tlcsdm.tlstudio.examples.swt.rcp.product" application="com.tlcsdm.tlstudio.examples.swt.rcp.application" version="1.0.0.qualifier" type="bundles" includeLaunchers="true" autoIncludeRequirements="true">
 
-
    <configIni use="default">
    </configIni>
 
@@ -28,13 +27,11 @@
       </win>
    </launcher>
 
-
    <vm>
       <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</linux>
       <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</macos>
       <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</windows>
    </vm>
-
 
    <plugins>
       <plugin id="bcpg"/>
@@ -131,6 +128,7 @@
       <plugin id="org.eclipse.swt.examples.launcher"/>
       <plugin id="org.eclipse.swt.examples.layouts"/>
       <plugin id="org.eclipse.swt.examples.paint"/>
+      <plugin id="org.eclipse.swt.examples.watchdog"/>
       <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
       <plugin id="org.eclipse.text"/>
       <plugin id="org.eclipse.ui"/>

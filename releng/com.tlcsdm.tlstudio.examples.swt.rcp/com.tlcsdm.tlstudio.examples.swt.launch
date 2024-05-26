@@ -12,7 +12,9 @@
     <booleanAttribute key="clearwslog" value="false"/>
     <stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/com.tlcsdm.tlstudio.examples.swt"/>
     <booleanAttribute key="default" value="false"/>
-    <setAttribute key="deselected_workspace_bundles"/>
+    <setAttribute key="deselected_workspace_bundles">
+        <setEntry value="org.eclipse.swt.snippets"/>
+    </setAttribute>
     <booleanAttribute key="includeOptional" value="true"/>
     <stringAttribute key="location" value="${workspace_loc}/../runtime-tlcsdm-examples-swt"/>
     <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
@@ -154,6 +156,7 @@
         <setEntry value="org.eclipse.swt.examples.launcher@default:default"/>
         <setEntry value="org.eclipse.swt.examples.layouts@default:default"/>
         <setEntry value="org.eclipse.swt.examples.paint@default:default"/>
+        <setEntry value="org.eclipse.swt.examples.watchdog@default:default"/>
         <setEntry value="org.eclipse.swt.examples@default:default"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>

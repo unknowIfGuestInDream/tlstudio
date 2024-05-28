@@ -9,6 +9,7 @@
 	<version>1.0</version>
 	<packaging>pom</packaging>
 	<name>tlstudio</name>
+	<url>https://github.com/unknowIfGuestInDream/tlstudio</url>
 	<inceptionYear>2024</inceptionYear>
 	<description>RCP develop</description>
 
@@ -105,15 +106,15 @@
 
 	<issueManagement>
 		<system>Github Issues</system>
-		<url>https://github.com/unknowIfGuestInDream/javafxTool/issues</url>
+		<url>https://github.com/unknowIfGuestInDream/tlstudio/issues</url>
 	</issueManagement>
 	<ciManagement>
 		<system>jenkins</system>
 		<url>https://jenkins.tlcsdm.com/job/javafxtool/</url>
 	</ciManagement>
 	<scm>
-		<connection>https://github.com/unknowIfGuestInDream/javafxTool.git</connection>
-		<url>https://github.com/unknowIfGuestInDream/javafxTool</url>
+		<connection>https://github.com/unknowIfGuestInDream/tlstudio.git</connection>
+		<url>https://github.com/unknowIfGuestInDream/tlstudio</url>
 	</scm>
 	<organization>
 		<name>Tlcsdm</name>

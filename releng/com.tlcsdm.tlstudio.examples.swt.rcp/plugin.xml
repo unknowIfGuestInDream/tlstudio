@@ -29,17 +29,53 @@
             name="View">
       </view>
    </extension>
+      <extension
+            point="org.eclipse.ui.activities">
+            <activity
+                  id="org.eclipse.swt.examples.rcp.hideAnnotation"
+                  name="activity">
+                  <enabledWhen>
+                        <with variable="true">
+                              <equals value="false">
+                              </equals>
+                        </with>
+                  </enabledWhen>
+            </activity>
+            <activityPatternBinding
+                  activityId="org.eclipse.swt.examples.rcp.hideAnnotation"
+                  pattern="org.eclipse.ui.editors/org.eclipse.ui.edit.text.*|org.eclipse.ui.ide/org.eclipse.ui.*|org.eclipse.ui.cheatsheets/org.eclipse.ui.*">
+            </activityPatternBinding>
+            <activityPatternBinding
+                  activityId="org.eclipse.swt.examples.rcp.hideAnnotation"
+                  isEqualityPattern="true"
+                  pattern="org.eclipse.ui.console/org.eclipse.ui.internal.console.ansi.preferences.AnsiConsolePreferencePage">
+            </activityPatternBinding>
+      </extension>
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
             locationURI="menu:org.eclipse.ui.main.menu">
          <menu
                label="File">
+           <command
+                  commandId="org.eclipse.ui.file.restartWorkbench"
+                  label="Restart"
+                  style="push">
+            </command>
             <command
                   commandId="org.eclipse.ui.file.exit"
                   label="Exit">
             </command>
          </menu>
+         <menu
+            id="window"
+            label="Window">
+         <command
+               commandId="org.eclipse.ui.views.showView"
+               label="Show View"
+               style="push">
+         </command>
+      </menu>
       </menuContribution>
    </extension>
    <extension

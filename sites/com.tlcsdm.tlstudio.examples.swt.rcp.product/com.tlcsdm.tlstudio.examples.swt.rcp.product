@@ -9,6 +9,11 @@
    <launcherArgs>
       <programArgs>--launcher.defaultAction openFile
       </programArgs>
+      <vmArgs>-XX:+IgnoreUnrecognizedVMOptions
+-Dosgi.requiredJavaVersion=17
+-Dfile.encoding=UTF-8
+--add-modules=ALL-SYSTEM
+      </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>

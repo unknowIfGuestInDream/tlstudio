@@ -132,11 +132,10 @@
 				name="startupProgressRect"
 				value="0,385,600,15">
 			</property>
-			<property
-				name="preferenceCustomization"
-				value="plugin_customization.ini">
-			</property>
-			<property name="aboutText" value="%aboutText"/>
+   <property
+         name="preferenceCustomization"
+         value="plugin_customization.ini">
+   </property>
 		</product>
 	</extension>
 

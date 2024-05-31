@@ -7,7 +7,7 @@ Bundle-ClassPath: controls.jar
 Bundle-Activator: org.eclipse.swt.examples.controls.ControlPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: org.eclipse.ui.ide,
  org.eclipse.ui.views,
  org.eclipse.jface.text,

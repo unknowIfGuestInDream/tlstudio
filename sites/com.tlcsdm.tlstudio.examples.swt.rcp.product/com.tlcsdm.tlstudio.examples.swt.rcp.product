@@ -3,12 +3,18 @@
 
 <product name="SWT Examples Product" uid="com.tlcsdm.tlstudio.examples.swt.rcp.product" id="com.tlcsdm.tlstudio.examples.swt.rcp.product" application="com.tlcsdm.tlstudio.examples.swt.rcp.application" version="1.0.0.qualifier" type="bundles" includeLaunchers="true" autoIncludeRequirements="true">
 
+
    <configIni use="default">
    </configIni>
 
    <launcherArgs>
       <programArgs>--launcher.defaultAction openFile
       </programArgs>
+      <vmArgs>-XX:+IgnoreUnrecognizedVMOptions
+-Dosgi.requiredJavaVersion=17
+-Dfile.encoding=UTF-8
+--add-modules=ALL-SYSTEM
+      </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>
@@ -26,6 +32,7 @@
          <bmp/>
       </win>
    </launcher>
+
 
    <vm>
       <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</linux>
@@ -434,6 +441,9 @@ version(s), and exceptions or additional permissions here}.&quot;
       <plugin id="org.w3c.dom.smil"/>
       <plugin id="org.w3c.dom.svg"/>
    </plugins>
+
+   <features>
+   </features>
 
    <configurations>
       <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />

@@ -18,12 +18,12 @@
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
-		<tycho-version>4.0.7</tycho-version>
+		<tycho-version>4.0.8</tycho-version>
 		<tycho-extras-version>${tycho-version}</tycho-extras-version>
 		<tests.vmargs></tests.vmargs>
 		<maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
 		<maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
-		<maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
+		<maven-javadoc-plugin.version>3.7.0</maven-javadoc-plugin.version>
 		<maven-gpg-plugin.version>3.2.4</maven-gpg-plugin.version>
 		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
 		<maven-source-plugin.version>3.3.1</maven-source-plugin.version>
@@ -40,7 +40,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<junit.version>5.10.2</junit.version>
 		<poi-ooxml.version>5.2.5</poi-ooxml.version>
-		<freemarker.version>2.3.32</freemarker.version>
+		<freemarker.version>2.3.33</freemarker.version>
 		<jaxen.version>2.0.0</jaxen.version>
 		<commons-lang3.version>3.14.0</commons-lang3.version>
 		<commons-io.version>2.16.1</commons-io.version>
@@ -60,7 +60,7 @@
 		<reflections.version>0.10.2</reflections.version>
 		<log4j2.version>2.23.1</log4j2.version>
 		<log4j-over-slf4j.version>2.0.13</log4j-over-slf4j.version>
-		<guava.version>33.2.0-jre</guava.version>
+		<guava.version>33.2.1-jre</guava.version>
 		<dom4j.version>2.1.4</dom4j.version>
 		<pdfbox.version>3.0.2</pdfbox.version>
 		<pdfviewfx.version>3.1.0</pdfviewfx.version>

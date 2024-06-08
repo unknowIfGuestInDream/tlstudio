@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension
+		point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="menu:org.eclipse.ui.main.menu">
+			<menu
+				id="window"
+				label="Window">
+				<command
+					commandId="org.eclipse.swt.snippets.launcher"
+					label="SWT Snippets"
+					style="push">
+				</command>
+			</menu>
+		</menuContribution>
+	</extension>
+      <extension
+            point="org.eclipse.ui.commands">
+            <command
+                  id="org.eclipse.swt.snippets.launcher"
+                  name="SWT Snippets">
+            </command>
+      </extension>
+      <extension point="org.eclipse.ui.handlers">
+            <handler commandId="org.eclipse.swt.snippets.launcher"
+                  class="org.eclipse.swt.snippets.SnippetHandler" />
+      </extension>
+
+</plugin>

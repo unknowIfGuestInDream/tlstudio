@@ -23,8 +23,8 @@ public class Perspective implements IPerspectiveFactory {
 		layout.createFolder("leftBottom", IPageLayout.TOP, 0.3f, "left").addView(LAYOUT_VIEWID);
 		layout.createFolder("right", IPageLayout.LEFT, 0.5f, layout.getEditorArea());
 		layout.createFolder("rightTop", IPageLayout.TOP, 0.25f, "right").addView(CONTROL_VIEWID);
-		layout.createFolder("rightTop1", IPageLayout.TOP, 0.5f, "right").addView(PAINT_VIEWID);
-		layout.createFolder("rightBottom", IPageLayout.TOP, 0.25f, "right").addView(CONSOLEVIEWID);
+		layout.createFolder("rightTop1", IPageLayout.TOP, 0.6f, "right").addView(PAINT_VIEWID);
+		layout.createFolder("rightBottom", IPageLayout.TOP, 0.15f, "right").addView(CONSOLEVIEWID);
 	}
 
 }

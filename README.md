@@ -1,5 +1,8 @@
 # Introduce
 
+1. SWT Example  
+Products that integrate SWT examples
+![SWT Examples](sites/com.tlcsdm.tlstudio.examples.swt.rcp.product/SWT_Example.png)
 
 ## Recent activity [![Time period](https://images.repography.com/50932872/unknowIfGuestInDream/tlstudio/recent-activity/VoQdu9H5zsziTaZQ5s7Pnql0nPvuTtAaBna9bcRzqw0/nucn5MjixylUZPynO_bqxCtbNGmI92AB6OE6ezMipQg_badge.svg)](https://repography.com)
 [![Timeline graph](https://images.repography.com/50932872/unknowIfGuestInDream/tlstudio/recent-activity/VoQdu9H5zsziTaZQ5s7Pnql0nPvuTtAaBna9bcRzqw0/nucn5MjixylUZPynO_bqxCtbNGmI92AB6OE6ezMipQg_timeline.svg)](https://github.com/unknowIfGuestInDream/tlstudio/commits)

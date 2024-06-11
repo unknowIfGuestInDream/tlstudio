@@ -132,6 +132,14 @@
 				name="startupProgressRect"
 				value="0,385,600,15">
 			</property>
+			<property
+               name="aboutImage"
+               value="product_lg.gif">
+         </property>
+         <property
+               name="aboutText"
+               value="Open source SWT examples. (c) Copyright 2024 the original author or authors.  @https://github.com/unknowIfGuestInDream/tlstudio">
+         </property>
    <property
          name="preferenceCustomization"
          value="plugin_customization.ini">

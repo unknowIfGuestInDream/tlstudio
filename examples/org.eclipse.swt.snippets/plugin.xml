@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-
-	<extension
-		point="org.eclipse.ui.menus">
-		<menuContribution
-			locationURI="menu:window">
-				<command
-					commandId="org.eclipse.swt.snippets.launcher"
-					label="SWT Snippets"
-					style="push">
-				</command>
-		</menuContribution>
-	</extension>
-      <extension
+	
+	  <extension
             point="org.eclipse.ui.commands">
             <command
                   id="org.eclipse.swt.snippets.launcher"

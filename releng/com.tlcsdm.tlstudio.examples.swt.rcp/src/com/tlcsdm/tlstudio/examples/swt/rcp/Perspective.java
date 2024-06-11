@@ -18,13 +18,12 @@ public class Perspective implements IPerspectiveFactory {
 	public void createInitialLayout(IPageLayout layout) {
 		layout.setEditorAreaVisible(false);
 		layout.createFolder("left", IPageLayout.LEFT, 0.5f, layout.getEditorArea());
-		layout.createFolder("leftTop", IPageLayout.TOP, 0.2f, "left").addView(CUSTOM_CONTROL_VIEWID);
-		layout.createFolder("leftTop1", IPageLayout.TOP, 0.5f, "left").addView(LAUNCHER_VIEWID);
-		layout.createFolder("leftBottom", IPageLayout.TOP, 0.3f, "left").addView(LAYOUT_VIEWID);
+		layout.createFolder("leftTop", IPageLayout.TOP, 0.5f, "left").addView(CONTROL_VIEWID);
+		layout.createFolder("leftTop1", IPageLayout.TOP, 0.4f, "left").addView(LAUNCHER_VIEWID);
+		layout.createFolder("leftBottom", IPageLayout.TOP, 0.1f, "left").addView(LAYOUT_VIEWID);
 		layout.createFolder("right", IPageLayout.LEFT, 0.5f, layout.getEditorArea());
-		layout.createFolder("rightTop", IPageLayout.TOP, 0.25f, "right").addView(CONTROL_VIEWID);
-		layout.createFolder("rightTop1", IPageLayout.TOP, 0.6f, "right").addView(PAINT_VIEWID);
-		layout.createFolder("rightBottom", IPageLayout.TOP, 0.15f, "right").addView(CONSOLEVIEWID);
+		layout.createFolder("rightTop", IPageLayout.TOP, 0.65f, "right").addView(CUSTOM_CONTROL_VIEWID);
+		layout.createFolder("rightTop1", IPageLayout.TOP, 0.35f, "right").addView(PAINT_VIEWID);
 	}
 
 }

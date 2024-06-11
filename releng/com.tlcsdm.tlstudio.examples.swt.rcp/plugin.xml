@@ -130,6 +130,14 @@
 				value="SWT Examples Product">
 			</property>
 			<property
+				name="aboutText"
+				value="%aboutText">
+			</property>
+			<property
+				name="aboutImage"
+				value="product_lg.gif">
+			</property>
+			<property
 				name="startupForegroundColor"
 				value="4B4848">
 			</property>

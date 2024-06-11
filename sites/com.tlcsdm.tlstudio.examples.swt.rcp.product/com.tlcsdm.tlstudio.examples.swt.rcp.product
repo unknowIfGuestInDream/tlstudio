@@ -3,6 +3,24 @@
 
 <product name="SWT Examples Product" uid="com.tlcsdm.tlstudio.examples.swt.rcp.product" id="com.tlcsdm.tlstudio.examples.swt.rcp.product" application="com.tlcsdm.tlstudio.examples.swt.rcp.application" version="1.0.0.qualifier" type="bundles" includeLaunchers="true" autoIncludeRequirements="true">
 
+   <aboutInfo>
+      <image path="/com.tlcsdm.tlstudio.examples.swt.rcp/product_lg.gif"/>
+      <text>
+         SWT Example Project
+
+Open source SWT examples.
+(c) Copyright 2024 the original author or authors.
+ *  @https://github.com/unknowIfGuestInDream/tlstudio
+Licensed under the EPL-2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+     https://www.eclipse.org/legal/epl-2.0/
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE
+PUBLIC LICENSE (&quot;AGREEMENT&quot;). ANY USE, REPRODUCTION OR DISTRIBUTION
+OF THE PROGRAM CONSTITUTES RECIPIENT&apos;S ACCEPTANCE OF THIS AGREEMENT.
+      </text>
+   </aboutInfo>
+
    <configIni use="default">
    </configIni>
 
@@ -31,6 +49,7 @@
          <bmp/>
       </win>
    </launcher>
+
 
    <vm>
       <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</linux>

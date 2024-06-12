@@ -76,6 +76,55 @@
 			<unit id="org.eclipse.nebula.widgets.nattable.extension.poi.feature.feature.group" version="2.4.0.202405230453"/>
 			<unit id="org.eclipse.nebula.widgets.nattable.extension.poi.feature.source.feature.group" version="2.4.0.202405230453"/>
 		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/technology/babel/update-site/latest/"/>
+			<unit id="org.eclipse.babel.nls_datatools_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_datatools_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_eclipse_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_eclipse_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.emf_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.emf_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.graphiti_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.graphiti_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.mdt.bpmn2_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.mdt.bpmn2_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.tmf.xtext_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.tmf.xtext_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_mylyn_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_mylyn_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_rt.rap_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_rt.rap_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_soa.bpmn2-modeler_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_soa.bpmn2-modeler_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.egit_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.egit_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.handly_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.handly_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.jgit_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.jgit_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.lsp4e_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.lsp4e_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.packaging.mpc_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.packaging.mpc_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.packaging_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.packaging_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.passage_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.passage_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.tm4e_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.tm4e_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.cdt_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.cdt_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.gef_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.gef_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.mat_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.mat_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.tm_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.tm_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.tracecompass_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.tracecompass_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_webtools_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_webtools_zh.feature.group" version="4.26.0.v20230220105658"/>
+		</location>
 		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" label="Apache Felix" missingManifest="error" type="Maven">
 			<dependencies>
 				<dependency>

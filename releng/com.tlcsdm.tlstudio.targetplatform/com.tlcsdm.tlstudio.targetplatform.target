@@ -3,10 +3,42 @@
 <target name="Tlstudio Platform">
 	<locations>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-			<repository location="https://download.eclipse.org/releases/2024-03/"/>
+			<repository location="http://download.eclipse.org/releases/neon/"/>
 			<unit id="org.eclipse.equinox.sdk.feature.group" version="0.0.0"/>
-		    <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
-		    <unit id="javax.activation" version="0.0.0"/>
+			<unit id="org.eclipse.cdt.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.e4.core.tools.feature.source.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.fx.ide.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.cloudio.doc.user.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.cloudio.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.common.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.dot.doc.user.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.dot.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.fx.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.geometry.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.graph.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.layout.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.mvc.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.zest.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.jdt.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.jst.enterprise_ui.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.jst.web_ui.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.libra.facet.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.libra.framework.editor.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.libra.framework.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.pde.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.swtbot.eclipse.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.swtbot.eclipse.gef.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.swtbot.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.swtbot.ide.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.wst.jsdt.chromium.debug.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.wst.jsdt.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.wst.web_ui.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.zest.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.equinox.compendium.sdk.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.equinox.core.feature.feature.group" version="0.0.0"/>
 		</location>
 	</locations>
 	<targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17"/>

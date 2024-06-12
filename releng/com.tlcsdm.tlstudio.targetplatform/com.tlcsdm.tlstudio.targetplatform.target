@@ -3,10 +3,395 @@
 <target name="Tlstudio Platform">
 	<locations>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-			<repository location="https://download.eclipse.org/releases/2024-03/"/>
+			<repository location="http://download.eclipse.org/releases/neon/"/>
+			<unit id="org.eclipse.emf.common.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.common.ui.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.databinding.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.doc.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.ecp.license.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.mapping.ecore.editor.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.mapping.ecore.feature.group" version="0.0.0"/>
+			<unit id="epp.package.rcp" version="0.0.0"/>
+			<unit id="org.eclipse.e4.rcp.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.e4.rcp.source.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.equinox.p2.extras.feature.source.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.equinox.p2.rcp.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.equinox.p2.rcp.feature.source.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.rcp.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.rcp.sdk.id" version="0.0.0"/>
+			<unit id="org.eclipse.rcp.source.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.ecf.core.source.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.ecf.remoteservice.sdk.source.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.ecf.core.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.ecf.remoteservice.sdk.feature.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.equinox.sdk.feature.group" version="0.0.0"/>
-		    <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
-		    <unit id="javax.activation" version="0.0.0"/>
+			<unit id="org.eclipse.cdt.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.e4.core.tools.feature.source.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.fx.ide.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.cloudio.doc.user.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.cloudio.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.common.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.dot.doc.user.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.dot.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.fx.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.geometry.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.graph.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.layout.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.mvc.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.gef4.zest.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.jdt.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.jst.enterprise_ui.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.jst.web_ui.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.libra.facet.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.libra.framework.editor.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.libra.framework.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.pde.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.swtbot.eclipse.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.swtbot.eclipse.gef.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.swtbot.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.swtbot.ide.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.wst.jsdt.chromium.debug.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.wst.jsdt.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.wst.web_ui.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.zest.sdk.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.equinox.compendium.sdk.feature.group" version="0.0.0"/>
+            <unit id="org.eclipse.equinox.core.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.pde.api.tools.ee.feature.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.sapphire.osgi.feature.group" version="0.0.0"/>
+			<unit id="org.eclipse.equinox.serverside.sdk.feature.group" version="0.0.0"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/nattable/releases/2.4.0/repository/"/>
+			<unit id="org.eclipse.nebula.widgets.nattable.core.feature.feature.group" version="2.4.0.202405230453"/>
+			<unit id="org.eclipse.nebula.widgets.nattable.core.feature.source.feature.group" version="2.4.0.202405230453"/>
+			<unit id="org.eclipse.nebula.widgets.nattable.extension.e4.feature.feature.group" version="2.4.0.202405230453"/>
+			<unit id="org.eclipse.nebula.widgets.nattable.extension.e4.feature.source.feature.group" version="2.4.0.202405230453"/>
+			<unit id="org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature.feature.group" version="2.4.0.202405230453"/>
+			<unit id="org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature.source.feature.group" version="2.4.0.202405230453"/>
+			<unit id="org.eclipse.nebula.widgets.nattable.extension.nebula.feature.feature.group" version="2.4.0.202405230453"/>
+			<unit id="org.eclipse.nebula.widgets.nattable.extension.nebula.feature.source.feature.group" version="2.4.0.202405230453"/>
+			<unit id="org.eclipse.nebula.widgets.nattable.extension.poi.feature.feature.group" version="2.4.0.202405230453"/>
+			<unit id="org.eclipse.nebula.widgets.nattable.extension.poi.feature.source.feature.group" version="2.4.0.202405230453"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="https://download.eclipse.org/technology/babel/update-site/latest/"/>
+			<unit id="org.eclipse.babel.nls_datatools_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_datatools_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_eclipse_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_eclipse_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.emf_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.emf_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.graphiti_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.graphiti_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.mdt.bpmn2_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.mdt.bpmn2_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.tmf.xtext_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_modeling.tmf.xtext_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_mylyn_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_mylyn_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_rt.rap_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_rt.rap_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_soa.bpmn2-modeler_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_soa.bpmn2-modeler_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.egit_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.egit_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.handly_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.handly_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.jgit_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.jgit_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.lsp4e_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.lsp4e_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.packaging.mpc_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.packaging.mpc_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.packaging_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.packaging_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.passage_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.passage_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.tm4e_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_technology.tm4e_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.cdt_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.cdt_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.gef_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.gef_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.mat_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.mat_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.tm_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.tm_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.tracecompass_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_tools.tracecompass_zh.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_webtools_ja.feature.group" version="4.26.0.v20230220105658"/>
+			<unit id="org.eclipse.babel.nls_webtools_zh.feature.group" version="4.26.0.v20230220105658"/>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" label="Apache Felix" missingManifest="error" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>org.apache.felix.scr</artifactId>
+					<version>2.2.6</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" label="OSGi" missingManifest="error" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.annotation.bundle</artifactId>
+					<version>2.0.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.annotation.versioning</artifactId>
+					<version>1.1.2</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.cm</artifactId>
+					<version>1.6.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.component.annotations</artifactId>
+					<version>1.5.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.component</artifactId>
+					<version>1.5.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.coordinator</artifactId>
+					<version>1.0.2</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.device</artifactId>
+					<version>1.1.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.event</artifactId>
+					<version>1.4.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.http.whiteboard</artifactId>
+					<version>1.1.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.http</artifactId>
+					<version>1.2.2</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.log.stream</artifactId>
+					<version>1.0.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.metatype.annotations</artifactId>
+					<version>1.4.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.metatype</artifactId>
+					<version>1.4.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.prefs</artifactId>
+					<version>1.1.2</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.provisioning</artifactId>
+					<version>1.2.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.repository</artifactId>
+					<version>1.1.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.upnp</artifactId>
+					<version>1.2.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.useradmin</artifactId>
+					<version>1.1.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.service.wireadmin</artifactId>
+					<version>1.0.2</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.util.function</artifactId>
+					<version>1.2.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.util.measurement</artifactId>
+					<version>1.0.2</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.util.position</artifactId>
+					<version>1.0.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.util.promise</artifactId>
+					<version>1.3.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.util.pushstream</artifactId>
+					<version>1.1.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.util.xml</artifactId>
+					<version>1.0.2</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" label="Jakarta EE" missingManifest="error" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>jakarta.annotation</groupId>
+					<artifactId>jakarta.annotation-api</artifactId>
+					<version>2.1.1</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>jakarta.inject</groupId>
+					<artifactId>jakarta.inject-api</artifactId>
+					<version>2.0.1</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
+		</location>
+		<location includeDependencyDepth="none" includeDependencyScopes="compile" includeSource="true" label="JUnit 5" missingManifest="error" type="Maven">
+			<dependencies>
+				<dependency>
+					<groupId>org.apiguardian</groupId>
+					<artifactId>apiguardian-api</artifactId>
+					<version>1.1.2</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.jupiter</groupId>
+					<artifactId>junit-jupiter-api</artifactId>
+					<version>5.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.jupiter</groupId>
+					<artifactId>junit-jupiter-engine</artifactId>
+					<version>5.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.jupiter</groupId>
+					<artifactId>junit-jupiter-migrationsupport</artifactId>
+					<version>5.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.jupiter</groupId>
+					<artifactId>junit-jupiter-params</artifactId>
+					<version>5.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.platform</groupId>
+					<artifactId>junit-platform-commons</artifactId>
+					<version>1.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.platform</groupId>
+					<artifactId>junit-platform-engine</artifactId>
+					<version>1.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.platform</groupId>
+					<artifactId>junit-platform-launcher</artifactId>
+					<version>1.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.platform</groupId>
+					<artifactId>junit-platform-runner</artifactId>
+					<version>1.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.platform</groupId>
+					<artifactId>junit-platform-suite-api</artifactId>
+					<version>1.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.platform</groupId>
+					<artifactId>junit-platform-suite-commons</artifactId>
+					<version>1.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.platform</groupId>
+					<artifactId>junit-platform-suite-engine</artifactId>
+					<version>1.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+					<version>5.10.0</version>
+					<type>jar</type>
+				</dependency>
+				<dependency>
+					<groupId>org.opentest4j</groupId>
+					<artifactId>opentest4j</artifactId>
+					<version>1.3.0</version>
+					<type>jar</type>
+				</dependency>
+			</dependencies>
 		</location>
 	</locations>
 	<targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17"/>

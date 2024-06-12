@@ -14,15 +14,8 @@
  *******************************************************************************/
 package org.eclipse.swt.snippets;
 
-/*
- * Button example snippet: set the default button
- *
- * For a list of all SWT example snippets see
- * http://www.eclipse.org/swt/snippets/
- */
-import static org.eclipse.swt.events.SelectionListener.*;
-
 import org.eclipse.swt.*;
+import org.eclipse.swt.events.*;
 import org.eclipse.swt.layout.*;
 import org.eclipse.swt.widgets.*;
 
@@ -38,10 +31,10 @@ public static void main (String [] args) {
 	text.setLayoutData (new RowData (100, SWT.DEFAULT));
 	Button ok = new Button (shell, SWT.PUSH);
 	ok.setText ("OK");
-	ok.addSelectionListener(widgetSelectedAdapter(e -> System.out.println("OK")));
+	ok.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> System.out.println("OK")));
 	Button cancel = new Button (shell, SWT.PUSH);
 	cancel.setText ("Cancel");
-	cancel.addSelectionListener(widgetSelectedAdapter(e -> System.out.println("Cancel")));
+	cancel.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> System.out.println("Cancel")));
 	shell.setDefaultButton (cancel);
 	shell.setLayout (new RowLayout ());
 	shell.pack ();

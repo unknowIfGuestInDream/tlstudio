@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Rcp
+Bundle-Name: SWT Examples RCP
 Bundle-SymbolicName: com.tlcsdm.tlstudio.examples.swt.rcp;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.tlcsdm.tlstudio.examples.swt.rcp.Activator
-Bundle-Vendor: TLCSDM
+Bundle-Vendor: Tlcsdm
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.apache.felix.scr,

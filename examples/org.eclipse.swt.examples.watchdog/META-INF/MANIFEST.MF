@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %bundleName
 Bundle-SymbolicName: org.eclipse.swt.examples.watchdog;singleton:=true
+Bundle-Vendor: Eclipse.org
 Bundle-Version: 1.2.0.qualifier
 Bundle-Activator: org.eclipse.swt.examples.watchdog.WatchdogPlugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17

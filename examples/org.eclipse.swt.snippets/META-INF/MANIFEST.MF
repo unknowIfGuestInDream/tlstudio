@@ -6,7 +6,9 @@ Bundle-Version: 3.4.0
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.swt,
- org.eclipse.ui
+ org.eclipse.ui,
+ org.eclipse.osgi,
+ org.eclipse.core.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Automatic-Module-Name: org.eclipse.swt.snippets
 Bundle-ActivationPolicy: lazy

@@ -16,6 +16,7 @@ package org.eclipse.swt.snippets;
 import java.io.*;
 import java.lang.ProcessBuilder.*;
 import java.lang.reflect.*;
+import java.net.*;
 import java.nio.charset.*;
 import java.nio.file.*;
 import java.nio.file.Path;
@@ -25,12 +26,14 @@ import java.util.concurrent.*;
 import java.util.regex.*;
 import java.util.regex.Pattern;
 
+import org.eclipse.core.runtime.*;
 import org.eclipse.swt.*;
 import org.eclipse.swt.custom.*;
 import org.eclipse.swt.graphics.*;
 import org.eclipse.swt.layout.*;
 import org.eclipse.swt.program.*;
 import org.eclipse.swt.widgets.*;
+import org.osgi.framework.*;
 
 /**
  * A useful application to list, filter and run the available Snippets.
@@ -587,9 +590,30 @@ public class SnippetExplorer {
 		// are already loaded from source.
 		final boolean[] loadedSnippets = new boolean[501];
 		final List<Snippet> snippets = new ArrayList<>();
+		Bundle bundle = Platform.getBundle("org.eclipse.swt.snippets");
+		URL url = null;
+		if(bundle !=null) {
+			 try {
+				url= FileLocator.toFileURL(bundle.getEntry(SnippetsConfig.SNIPPETS_SOURCE_DIR.getPath()));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}else {
+			try {
+				url = SnippetsConfig.SNIPPETS_SOURCE_DIR.toURI().toURL();
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+		}
 
 		// load snippets from source directory
-		final Path sourceDir = SnippetsConfig.SNIPPETS_SOURCE_DIR.toPath();
+		Path sourceDir=null;
+		try {
+			sourceDir = Paths.get(url.toURI());
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
+		//final Path sourceDir = Paths.get("source");
 		if (Files.exists(sourceDir)) {
 			try (DirectoryStream<Path> files = Files.newDirectoryStream(sourceDir, "*.java")) {
 				for (Path file : files) {

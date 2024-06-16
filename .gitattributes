@@ -16,7 +16,7 @@
 *.py            linguist-language=Python
 *.bat           linguist-language=Shell
 *.vbs           linguist-language=Shell
-**/about.html        linguist-vendored
+**/about.html   linguist-documentation=false
 
 # Ensure the following are treated as binary.
 # # (binary is a macro for -text -diff)

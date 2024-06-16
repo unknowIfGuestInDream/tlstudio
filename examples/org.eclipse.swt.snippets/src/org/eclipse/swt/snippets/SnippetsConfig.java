@@ -21,7 +21,8 @@ import java.io.*;
  */
 public class SnippetsConfig {
 
-	public static final File SNIPPETS_SOURCE_DIR = new File("src/org/eclipse/swt/snippets");
+	//public static final File SNIPPETS_SOURCE_DIR = new File("src/org/eclipse/swt/snippets");
+	public static final File SNIPPETS_SOURCE_DIR = new File("source/");
 
 	public static final String SNIPPETS_PACKAGE = "org.eclipse.swt.snippets";
 

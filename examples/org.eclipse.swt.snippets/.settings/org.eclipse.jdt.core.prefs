@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+org.eclipse.jdt.core.builder.annotationPath.allLocations=disabled
 org.eclipse.jdt.core.compiler.annotation.inheritNullAnnotations=disabled
 org.eclipse.jdt.core.compiler.annotation.missingNonNullByDefaultAnnotation=ignore
 org.eclipse.jdt.core.compiler.annotation.nonnull=org.eclipse.jdt.annotation.NonNull
@@ -103,7 +104,7 @@ org.eclipse.jdt.core.compiler.problem.unusedDeclaredThrownExceptionWhenOverridin
 org.eclipse.jdt.core.compiler.problem.unusedExceptionParameter=ignore
 org.eclipse.jdt.core.compiler.problem.unusedImport=error
 org.eclipse.jdt.core.compiler.problem.unusedLabel=warning
-org.eclipse.jdt.core.compiler.problem.unusedLocal=error
+org.eclipse.jdt.core.compiler.problem.unusedLocal=warning
 org.eclipse.jdt.core.compiler.problem.unusedObjectAllocation=ignore
 org.eclipse.jdt.core.compiler.problem.unusedParameter=ignore
 org.eclipse.jdt.core.compiler.problem.unusedParameterIncludeDocCommentReference=enabled

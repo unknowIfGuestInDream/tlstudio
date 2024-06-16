@@ -594,8 +594,10 @@ public class SnippetExplorer {
 		URL url = null;
 		if(bundle !=null) {
 			 try {
-				url= FileLocator.toFileURL(bundle.getEntry(SnippetsConfig.SNIPPETS_SOURCE_DIR.getPath()));
+				url= URIUtil.toURI(FileLocator.toFileURL(bundle.getEntry(SnippetsConfig.SNIPPETS_SOURCE_DIR.getPath()))).toURL();
 			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (URISyntaxException e) {
 				e.printStackTrace();
 			}
 		}else {

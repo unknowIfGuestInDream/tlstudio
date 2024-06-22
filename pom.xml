@@ -21,8 +21,8 @@
 		<tycho-version>4.0.8</tycho-version>
 		<tycho-extras-version>${tycho-version}</tycho-extras-version>
 		<tests.vmargs></tests.vmargs>
-		<maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
-		<maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
+		<maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
+		<maven-surefire-plugin.version>3.3.0</maven-surefire-plugin.version>
 		<maven-javadoc-plugin.version>3.7.0</maven-javadoc-plugin.version>
 		<maven-gpg-plugin.version>3.2.4</maven-gpg-plugin.version>
 		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
@@ -72,7 +72,7 @@
 		<jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
 		<jaxb-runtime.version>4.0.5</jaxb-runtime.version>
 		<asm.version>9.7</asm.version>
-		<classgraph.version>4.8.173</classgraph.version>
+		<classgraph.version>4.8.174</classgraph.version>
 		<checker-qual.version>3.44.0</checker-qual.version>
 	</properties>
 

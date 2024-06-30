@@ -1,0 +1,138 @@
+/*******************************************************************************
+ * Copyright (c) 2004, 2023 IBM Corporation and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
+package org.eclipse.ui.examples.jobs.views;
+
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.jobs.ISchedulingRule;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.ui.progress.IDeferredWorkbenchAdapter;
+import org.eclipse.ui.progress.IElementCollector;
+
+public class SlowElementAdapter implements IDeferredWorkbenchAdapter {
+
+	private static boolean serializeFetching = false;
+	private static boolean batchFetchedChildren = false;
+
+	final ISchedulingRule mutexRule = new ISchedulingRule() {
+		@Override
+		public boolean isConflicting(ISchedulingRule rule) {
+			return rule == mutexRule;
+		}
+		@Override
+		public boolean contains(ISchedulingRule rule) {
+			return rule == mutexRule;
+		}
+	};
+
+	@Override
+	public void fetchDeferredChildren(Object object, IElementCollector collector, IProgressMonitor monitor) {
+		if (object instanceof SlowElement slow) {
+			Object[] children = slow.getChildren();
+			if (isBatchFetchedChildren()) {
+				sleep();
+				collector.add(children, monitor);
+			} else {
+				for (Object child : children) {
+					if (monitor.isCanceled()) {
+						return;
+					}
+					collector.add(child, monitor);
+					sleep();
+				}
+			}
+		}
+	}
+
+	private void sleep() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			//ignore
+		}
+	}
+
+	@Override
+	public boolean isContainer() {
+		return true;
+	}
+
+	@Override
+	public ISchedulingRule getRule(final Object object) {
+		if (isSerializeFetching())
+			return mutexRule;
+		// Allow several SlowElement parents to fetch children concurrently
+		return null;
+	}
+
+	@Override
+	public Object[] getChildren(Object object) {
+		if (object instanceof SlowElement slow) {
+			return slow.getChildren();
+		}
+		return new Object[0];
+	}
+
+	@Override
+	public ImageDescriptor getImageDescriptor(Object object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getLabel(Object o) {
+		if (o instanceof SlowElement slow) {
+			return slow.getName();
+		}
+		return "unknown"; //$NON-NLS-1$
+	}
+
+	@Override
+	public Object getParent(Object o) {
+		if (o instanceof SlowElement slow) {
+			return slow.getParent();
+		}
+		return null;
+	}
+
+	/**
+	 * @return Returns the batchFetchedChildren.
+	 */
+	public static boolean isBatchFetchedChildren() {
+		return batchFetchedChildren;
+	}
+
+	/**
+	 * @param batchFetchedChildren
+	 *                   The batchFetchedChildren to set.
+	 */
+	public static void setBatchFetchedChildren(boolean batchFetchedChildren) {
+		SlowElementAdapter.batchFetchedChildren = batchFetchedChildren;
+	}
+
+	/**
+	 * @return Returns the serializeFetching.
+	 */
+	public static boolean isSerializeFetching() {
+		return serializeFetching;
+	}
+
+	/**
+	 * @param serializeFetching
+	 *                   The serializeFetching to set.
+	 */
+	public static void setSerializeFetching(boolean serializeFetching) {
+		SlowElementAdapter.serializeFetching = serializeFetching;
+	}
+
+}

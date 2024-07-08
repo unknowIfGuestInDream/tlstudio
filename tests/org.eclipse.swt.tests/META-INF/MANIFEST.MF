@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse SWT Tests
+Bundle-SymbolicName: org.eclipse.swt.tests
+Bundle-Version: 3.107.400.qualifier
+Bundle-Vendor: Eclipse.org
+Export-Package: org.eclipse.swt.tests.junit,
+ org.eclipse.swt.tests.junit.performance
+Require-Bundle: org.junit,
+ org.eclipse.swt
+Eclipse-BundleShape: dir
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: org.eclipse.swt.tests

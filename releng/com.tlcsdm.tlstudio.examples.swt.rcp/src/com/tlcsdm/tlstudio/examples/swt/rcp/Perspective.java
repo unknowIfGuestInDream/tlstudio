@@ -1,5 +1,6 @@
 package com.tlcsdm.tlstudio.examples.swt.rcp;
 
+import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
@@ -17,13 +18,15 @@ public class Perspective implements IPerspectiveFactory {
 	@Override
 	public void createInitialLayout(IPageLayout layout) {
 		layout.setEditorAreaVisible(false);
-		layout.createFolder("left", IPageLayout.LEFT, 0.5f, layout.getEditorArea());
-		layout.createFolder("leftTop", IPageLayout.TOP, 0.5f, "left").addView(CONTROL_VIEWID);
-		layout.createFolder("leftTop1", IPageLayout.TOP, 0.4f, "left").addView(LAUNCHER_VIEWID);
-		layout.createFolder("leftBottom", IPageLayout.TOP, 0.1f, "left").addView(LAYOUT_VIEWID);
-		layout.createFolder("right", IPageLayout.LEFT, 0.5f, layout.getEditorArea());
-		layout.createFolder("rightTop", IPageLayout.TOP, 0.65f, "right").addView(CUSTOM_CONTROL_VIEWID);
-		layout.createFolder("rightTop1", IPageLayout.TOP, 0.35f, "right").addView(PAINT_VIEWID);
+		IFolderLayout left = layout.createFolder("left", IPageLayout.LEFT, 0.5f, layout.getEditorArea());
+		left.addView(CONTROL_VIEWID);
+		left.addView(LAUNCHER_VIEWID);
+		left.addView(LAYOUT_VIEWID);
+		IFolderLayout right = layout.createFolder("right", IPageLayout.LEFT, 0.5f, layout.getEditorArea());
+		right.addView(CUSTOM_CONTROL_VIEWID);
+		right.addView(PAINT_VIEWID);
+		right.addView(BROWSER_VIEWID);
+		layout.createFolder("rightTop", IPageLayout.BOTTOM, 0.7f, "right").addView(CONSOLEVIEWID);
 	}
 
 }

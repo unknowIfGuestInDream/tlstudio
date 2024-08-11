@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension
+		id="application"
+		point="org.eclipse.core.runtime.applications">
+		<application>
+			<run
+				class="com.tlcsdm.tlstudio.examples.ui.rcp.Application">
+			</run>
+		</application>
+	</extension>
+	<extension
+		point="org.eclipse.ui.perspectives">
+		<perspective
+			class="com.tlcsdm.tlstudio.examples.ui.rcp.Perspective"
+			name="Perspective"
+			id="com.tlcsdm.tlstudio.examples.ui.rcp.perspective">
+		</perspective>
+	</extension>
+	<extension
+		point="org.eclipse.ui.activities">
+		<activity
+			id="org.eclipse.ui.examples.rcp.hideAnnotation"
+			name="activity">
+			<enabledWhen>
+				<with variable="true">
+					<equals value="false">
+					</equals>
+				</with>
+			</enabledWhen>
+		</activity>
+		<activityPatternBinding
+			activityId="org.eclipse.ui.examples.rcp.hideAnnotation"
+			pattern="org.eclipse.ui.editors/org.eclipse.ui.edit.text.*|org.eclipse.ui.ide/org.eclipse.ui.*|org.eclipse.ui.cheatsheets/org.eclipse.ui.*">
+		</activityPatternBinding>
+		<activityPatternBinding
+			activityId="org.eclipse.ui.examples.rcp.hideAnnotation"
+			isEqualityPattern="true"
+			pattern="org.eclipse.ui.console/org.eclipse.ui.internal.console.ansi.preferences.AnsiConsolePreferencePage">
+		</activityPatternBinding>
+		<activityPatternBinding
+			activityId="org.eclipse.ui.examples.rcp.hideAnnotation"
+			isEqualityPattern="true"
+			pattern="org.eclipse.ui.views/org.eclipse.ui.views.ContentOutline">
+		</activityPatternBinding>
+		<activityPatternBinding
+			activityId="org.eclipse.ui.examples.rcp.hideAnnotation"
+			isEqualityPattern="true"
+			pattern="org.eclipse.ui.views/org.eclipse.ui.views.PropertySheet">
+		</activityPatternBinding>
+		<activityPatternBinding
+			activityId="org.eclipse.ui.examples.rcp.hideAnnotation"
+			isEqualityPattern="true"
+			pattern="org.eclipse.ui/org.eclipse.ui.internal.introview">
+		</activityPatternBinding>
+		<activityPatternBinding
+			activityId="org.eclipse.ui.examples.rcp.hideAnnotation"
+			isEqualityPattern="true"
+			pattern="org.eclipse.ui.workbench.texteditor/org.eclipse.ui.views.minimap.MinimapView">
+		</activityPatternBinding>
+	</extension>
+	<extension
+		point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="menu:org.eclipse.ui.main.menu">
+			<menu
+				id="window"
+				label="Window">
+				<command
+					commandId="org.eclipse.ui.views.showView"
+					label="Show View"
+					style="push">
+				</command>
+			</menu>
+		</menuContribution>
+	</extension>
+	<extension
+		id="product"
+		point="org.eclipse.core.runtime.products">
+		<product
+			name="Examples UI Product"
+			application="com.tlcsdm.tlstudio.examples.ui.rcp.application">
+			<property
+				name="windowImages"
+				value="icons/eclipse16.png,icons/eclipse32.png,icons/eclipse48.png,icons/eclipse64.png,icons/eclipse128.png,icons/eclipse256.png" />
+			<property
+				name="appName"
+				value="Examples UI Product">
+			</property>
+			<property
+         name="aboutText"
+         value="Examples UI Project&#x0A;&#x0A;Open source SWT examples.&#x0A;(c) Copyright 2024 the original author or authors.&#x0A; *  @https://github.com/unknowIfGuestInDream/tlstudio&#x0A;Licensed under the EPL-2.0 (the &quot;License&quot;);&#x0A;you may not use this file except in compliance with the License.&#x0A;You may obtain a copy of the License at&#x0A;     https://www.eclipse.org/legal/epl-2.0/&#x0A;THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE&#x0A;PUBLIC LICENSE (&quot;AGREEMENT&quot;). ANY USE, REPRODUCTION OR DISTRIBUTION&#x0A;OF THE PROGRAM CONSTITUTES RECIPIENT&apos;S ACCEPTANCE OF THIS AGREEMENT.">
+			</property>
+			<property
+				name="aboutImage"
+				value="product_lg.gif">
+			</property>
+			<property
+				name="startupForegroundColor"
+				value="4B4848">
+			</property>
+			<property
+				name="startupMessageRect"
+				value="7,345,445,20">
+			</property>
+			<property
+				name="startupProgressRect"
+				value="0,385,600,15">
+			</property>
+   <property
+         name="preferenceCustomization"
+         value="plugin_customization.ini">
+   </property>
+		</product>
+	</extension>
+
+</plugin>

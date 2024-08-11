@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.tlcsdm.tlstudio.examples.ui.rcp.feature"
+      label="Example UI Feature"
+      version="1.0.0.qualifier"
+      provider-name="Tlcsdm">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="org.eclipse.ui.examples.adapterservice"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.contributions"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.fieldassist"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.javaeditor"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.job"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.markerHelp"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.multipageeditor"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.navigator"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.perspective"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.propertysheet"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.readmetool"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.undo"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.uriSchemeHandler"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.ui.examples.views.properties.tabbed.article"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.jface.examples.databinding"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.jface.snippets"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.jface.text.examples"
+         version="0.0.0"/>
+
+</feature>

@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tlcsdm Widgets
+Bundle-SymbolicName: com.tlcsdm.tlstudio.widgets;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.tlcsdm.tlstudio.widgets.color,
+ com.tlcsdm.tlstudio.widgets.custom,
+ com.tlcsdm.tlstudio.widgets.model,
+ com.tlcsdm.tlstudio.widgets.viewers,
+ com.tlcsdm.tlstudio.widgets.window
+Bundle-Vendor: TLCSDM
+Automatic-Module-Name: com.tlcsdm.tlstudio.widgets
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Require-Bundle: org.eclipse.swt,
+ org.eclipse.osgi,
+ org.eclipse.core.runtime,
+ org.eclipse.jface,
+ org.eclipse.jface.source,
+ org.eclipse.jface.databinding,
+ org.eclipse.jface.databinding.source,
+ org.eclipse.core.databinding,
+ org.eclipse.core.databinding.beans,
+ org.eclipse.core.databinding.property,
+ org.eclipse.core.databinding.observable

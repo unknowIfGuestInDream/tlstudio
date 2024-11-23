@@ -1,14 +1,19 @@
 package com.tlcsdm.tlstudio.widgets.color;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
+import java.util.Locale;
 
 import org.eclipse.jface.resource.FontDescriptor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseTrackAdapter;
+import org.eclipse.swt.events.MouseTrackListener;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
@@ -32,8 +37,8 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 	/**
 	 * Width and height of the canvas
 	 */
-	protected int width = 1000, height = 1000;
-	protected int margins = 60;
+	protected int width = 600, height = 600;
+	protected int margins = 36;
 	/**
 	 * Chart style
 	 */
@@ -42,6 +47,10 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 	 * Style of each data Line/Point
 	 */
 	protected boolean isLine;
+	private double markerXRatio = -1;
+	private double markerYRatio = -1;
+	private int markerX;
+	private int markerY;
 	/**
 	 * Whether to include wavelength data
 	 */
@@ -68,6 +77,7 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 	 * Background Color
 	 */
 	protected Color bgColor;
+	protected boolean hasMarkWave;
 	/**
 	 * The color of the calculate point
 	 */
@@ -77,15 +87,13 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 	protected Color rulerColor;
 
 	private Font dataFont;
+	private Font waveFont;
 	private int endH;
-	private boolean dragInProgress;
-	private Point startPoint;
-	private Point startOrigin;
 
 	public ChromaticityDiagram(Composite parent, int style) {
 		super(parent, SWT.DOUBLE_BUFFERED | ((style & SWT.BORDER) == SWT.BORDER ? SWT.BORDER : SWT.NONE));
-		fontSize = 15;
-		dotSize = 4;
+		fontSize = 10;
+		dotSize = 3;
 		title = "Chromaticity Diagram";
 		legend = "";
 		gridColor = new Color(230, 230, 230);
@@ -94,7 +102,8 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 		hasWaveLength = true;
 		isLine = true;
 		hasCalculate = true;
-		calculateTxt = "Calculated value";
+		calculateTxt = "";
+		hasMarkWave = false;
 
 		addListener(SWT.Dispose, event -> {
 			safeDispose(bgColor);
@@ -103,51 +112,40 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 			safeDispose(gridColor);
 			safeDispose(rulerColor);
 			safeDispose(dataFont);
+			safeDispose(waveFont);
 		});
 		addPaintListener(e -> {
 			paintControl(e.gc);
 		});
-		addListener(SWT.MouseDown, event -> {
-			if (this.getParent() instanceof ScrolledComposite scrol) {
-				Cursor c = new Cursor(this.getDisplay(), SWT.CURSOR_SIZEALL);
-				this.setCursor(c);
-				startPoint = new Point(event.x, event.y);
-				startOrigin = scrol.getOrigin();
-				dragInProgress = true;
-			}
-		});
-		addListener(SWT.MouseMove, event -> {
-			if (!dragInProgress) {
+		addListener(SWT.MouseDown, e -> {
+			if (!hasCalculate) {
 				return;
 			}
-			ScrolledComposite scrol = (ScrolledComposite) this.getParent();
-			int maxX = scrol.getHorizontalBar().getMaximum();
-			int minX = scrol.getHorizontalBar().getMinimum();
-			int maxY = scrol.getVerticalBar().getMaximum();
-			int minY = scrol.getVerticalBar().getMinimum();
-
-			int offsetX = event.x - startPoint.x;
-			int offsetY = event.y - startPoint.y;
-			scrol.setOrigin(clamp(startOrigin.x - offsetX, minX, maxX), clamp(startOrigin.y - offsetY, minY, maxY));
-		});
-		addListener(SWT.MouseUp, event -> {
-			if (dragInProgress) {
-				dragInProgress = false;
-				this.setCursor(null);
-				startPoint = null;
-				startOrigin = null;
+			int w = e.x - margins;
+			int h = e.y - margins;
+			if (w < 0 || w > width || h < 0 || h > height) {
+				return;
 			}
+			int dataW = width - margins * 2;
+			int dataH = height - margins * 2;
+
+			BigDecimal wBigDecimal = new BigDecimal(w);
+			BigDecimal dataWBigDecimal = new BigDecimal(dataW);
+			BigDecimal xBigDecimal = wBigDecimal.divide(dataWBigDecimal, 4, RoundingMode.HALF_UP);
+
+			BigDecimal hBigDecimal = new BigDecimal(endH);
+			BigDecimal eyBigDecimal = new BigDecimal(e.y);
+			BigDecimal dataHBigDecimal = new BigDecimal(dataH);
+			BigDecimal yBigDecimal = hBigDecimal.subtract(eyBigDecimal).divide(dataHBigDecimal, 4,
+					RoundingMode.HALF_UP);
+			handlerMouseClick(xBigDecimal.doubleValue(), yBigDecimal.doubleValue());
 		});
+		this.addMouseMoveListener(this::doMouseMoveAction);
+		this.addMouseTrackListener(doMouseExitAdapter);
 	}
 
-	private int clamp(int value, int min, int max) {
-		if (value < min) {
-			return min;
-		}
-		if (value > max) {
-			return max;
-		}
-		return value;
+	protected void handlerMouseClick(double x, double y) {
+		setCalculatePoint(x, y);
 	}
 
 	public void setHasCalculate(boolean hasCalculate) {
@@ -155,6 +153,14 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 			this.hasCalculate = hasCalculate;
 			redraw();
 		}
+	}
+
+	public double getCalculateX() {
+		return this.calculateX;
+	}
+
+	public double getCalculateY() {
+		return this.calculateY;
 	}
 
 	public void setCalculatePoint(double calculateX, double calculateY) {
@@ -234,6 +240,7 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 		drawBackGround(gc);
 		drawOutLines(gc);
 		drawCalculate(gc);
+		drawMarker(gc);
 	}
 
 	private void drawBackGround(GC gc) {
@@ -243,26 +250,29 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 		}
 		FontDescriptor fd = FontDescriptor.createFrom(this.getFont()).setHeight(fontSize);
 		dataFont = fd.createFont(this.getDisplay());
-		FontDescriptor fdc = FontDescriptor.createFrom(this.getFont()).setHeight(fontSize + 8).setStyle(SWT.BOLD);
+		FontDescriptor fdc = FontDescriptor.createFrom(this.getFont()).setHeight(fontSize + 3).setStyle(SWT.BOLD);
 		Font commentsFont = fdc.createFont(this.getDisplay());
+		FontDescriptor fdwave = FontDescriptor.createFrom(this.getFont()).setHeight(fontSize - 2);
+		waveFont = fdwave.createFont(this.getDisplay());
 
 		if (Display.getDefault().getSystemColor(SWT.COLOR_BLACK).equals(bgColor)) {
 			textColor = Display.getDefault().getSystemColor(SWT.COLOR_WHITE);
 		} else {
 			textColor = Display.getDefault().getSystemColor(SWT.COLOR_BLACK);
 		}
-		int stepH = (height - margins * 2) / grid;
-		int stepW = (width - margins * 2) / grid;
-		int startH = margins + stepH, startW = margins + stepW;
-		endH = stepH * grid + margins;
-		int endW = stepW * grid + margins;
+		double stepH = (height - margins * 2) * 1.0 / grid;
+		double stepW = (width - margins * 2) * 1.0 / grid;
+		double startH = margins + stepH;
+		double startW = margins + stepW;
+		endH = (int) (stepH * grid + margins);
+		int endW = (int) (stepW * grid + margins);
 		if (title != null && !title.isEmpty()) {
 			GC tgc = new GC(this);
 			int titleWidth = tgc.textExtent(title).x;
 			tgc.dispose();
 			gc.setFont(commentsFont);
 			gc.setForeground(textColor);
-			gc.drawString(title, (width - margins * 2 - titleWidth) / 2, 10);
+			gc.drawString(title, (width - margins * 2 - titleWidth) / 2, 3);
 		}
 		if (legend != null && !legend.isEmpty()) {
 			gc.setFont(dataFont);
@@ -275,17 +285,17 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 			gc.setBackground(gridColor);
 			gc.setForeground(gridColor);
 			for (int i = 0; i < grid; ++i) {
-				int h = startH + i * stepH;
+				int h = (int) (startH + i * stepH);
 				gc.drawLine(margins, h, endW, h);
-				int w = startW + i * stepW;
+				int w = (int) (startW + i * stepW);
 				gc.drawLine(w, margins, w, endH);
 			}
 			gc.setBackground(rulerColor);
 			gc.setForeground(rulerColor);
 			for (int i = 0; i < ruler; ++i) {
-				int h = margins + i * stepH * each;
+				int h = (int) (margins + i * stepH * each);
 				gc.drawLine(margins, h, endW, h);
-				int w = margins + i * stepW * each;
+				int w = (int) (margins + i * stepW * each);
 				gc.drawLine(w, margins, w, endH);
 			}
 		}
@@ -295,17 +305,17 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 		gc.drawLine(margins, margins, margins, endH);
 		gc.drawLine(margins, endH, endW, endH);
 		for (int i = 0; i < ruler; ++i) {
-			int h = margins + (i + 1) * stepH * each;
-			gc.drawString("0." + (9 - i), 10, h + 10);
-			int w = margins + i * stepW * each;
-			gc.drawString("0." + i, w - 10, endH + 30);
+			int h = (int) (margins + (i + 1) * stepH * each);
+			gc.drawString("0." + (9 - i), 3, h - 10);
+			int w = (int) (margins + i * stepW * each);
+			gc.drawString("0." + i, w - 10, endH + 20);
 		}
-		gc.drawString("1.0", endW - 15, endH + 30);
-		gc.drawString("1.0", 10, margins);
+		gc.drawString("1.0", endW - 10, endH + 20);
+		gc.drawString("1.0", 3, margins - 5);
 	}
 
 	protected void drawOutLines(GC gc) {
-		// Do nothing
+		gc.setFont(waveFont);
 	}
 
 	protected void outline(List<CIEData> data, String name, int markWave, Color waveColor, GC gc) {
@@ -323,8 +333,7 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 				x = (int) Math.round(margins + dataW * d.getNormalizedX());
 				y = (int) Math.round(endH - dataH * d.getNormalizedY());
 				srgb = CIEData.sRGB65(d);
-				pColor = new Color((int) (srgb[0] * 255 + 0.5), (int) (srgb[1] * 255 + 0.5),
-						(int) (srgb[2] * 255 + 0.5));
+				pColor = new Color((int) (srgb[0] * 255), (int) (srgb[1] * 255), (int) (srgb[2] * 255));
 				gc.setForeground(pColor);
 				gc.setLineWidth(1);
 				if (isLine) {
@@ -340,7 +349,7 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 					gc.fillRectangle(x - dotSizeHalf, y - dotSizeHalf, dotSize, dotSize);
 				}
 				gc.setBackground(this.getBackground());
-				if (wave == markWave) {
+				if (hasMarkWave && (wave == markWave)) {
 					gc.setForeground(waveColor);
 					gc.drawLine(x, y, x + 300, y + markWave - 560);
 					gc.drawString(name, x + 310, y + markWave - 560, true);
@@ -395,14 +404,11 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 		int x, y, halfDot = dotSize / 2, lastx = -1, lasty = -1;
 		double ratio = (y2 - y1) / (x2 - x1);
 		double step = (x2 - x1) / 100;
-		double[] srgb;
 		for (double bx = x1 + step; bx < x2; bx += step) {
 			double by = (bx - x1) * ratio + y1;
-			double bz = 1 - bx - by;
-			double[] relativeXYZ = CIEData.relative(bx, by, bz);
-			srgb = CIEData.XYZd50toSRGBd65(relativeXYZ);
-			pColor = new Color((int) (srgb[0] * 255 + 0.5), (int) (srgb[1] * 255 + 0.5), (int) (srgb[2] * 255 + 0.5));
+			pColor = getColorByCoor(bx, by);
 			gc.setForeground(pColor);
+
 			x = (int) Math.round(margins + dataW * bx);
 			y = (int) Math.round(endH - dataH * by);
 			if (isLine) {
@@ -422,22 +428,27 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 		}
 	}
 
+	protected Color getColorByCoor(double x, double y) {
+		double z = 1 - x - y;
+		double[] relativeXYZ = CIEData.relative(x, y, z);
+		double[] srgb = CIEData.XYZd50toSRGBd65(relativeXYZ);
+		return new Color((int) (srgb[0] * 255), (int) (srgb[1] * 255), (int) (srgb[2] * 255));
+	}
+
 	private void drawCalculate(GC gc) {
 		if (!hasCalculate || calculateX < 0 || calculateX > 1 || calculateY <= 0 || calculateY > 1) {
 			return;
 		}
-		int dataW = width - margins * 2, dataH = height - margins * 2;
+		int dataW = width - margins * 2;
+		int dataH = height - margins * 2;
 		gc.setLineWidth(1);
 
-		double z = 1 - calculateX - calculateY;
-		if (z < 0 || z > 1) {
-			return;
-		}
 		Color pColor = calculateColor;
 		if (pColor == null) {
-			double[] relativeXYZ = CIEData.relative(calculateX, calculateY, z);
-			double[] srgb = CIEData.XYZd50toSRGBd65(relativeXYZ);
-			pColor = new Color((int) (srgb[0] * 255 + 0.5), (int) (srgb[1] * 255 + 0.5), (int) (srgb[2] * 255 + 0.5));
+			pColor = getColorByCoor(calculateX, calculateY);
+		}
+		if (!checkValidPoint(calculateX, calculateY)) {
+			pColor = Display.getDefault().getSystemColor(SWT.COLOR_GRAY);
 		}
 		int x = (int) Math.round(margins + dataW * calculateX);
 		int y = (int) Math.round(endH - dataH * calculateY);
@@ -451,9 +462,66 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 		}
 	}
 
+	protected boolean checkValidPoint(double x, double y) {
+		return true;
+	}
+
+	private void drawMarker(GC gc) {
+		if (!isEqualDouble(this.markerXRatio, -1) && !isEqualDouble(this.markerYRatio, -1)) {
+			int dataW = width - margins * 2;
+			int dataH = height - margins * 2;
+			markerX = (int) Math.round(margins + dataW * markerXRatio);
+			markerY = (int) Math.round(endH - dataH * markerYRatio);
+
+			gc.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_BLACK));
+			gc.setLineStyle(SWT.LINE_DASH);
+			gc.setLineWidth(2);
+			gc.drawLine(this.markerX, margins, this.markerX, endH);
+			gc.drawLine(margins, this.markerY, margins + dataW, this.markerY);
+			String txtXMarker = String.format(Locale.ENGLISH, "%.4f", markerXRatio);
+			gc.setBackground(rulerColor);
+			gc.drawText(txtXMarker, this.markerX + 1, margins + 5, false);
+
+			String txtYMarker = String.format(Locale.ENGLISH, "%.4f", markerYRatio);
+			gc.drawText(txtYMarker, margins + dataW + 5, this.markerY, false);
+		}
+	}
+
 	@Override
 	public Point computeSize(final int wHint, final int hHint) {
 		return this.computeSize(width, height, true);
+	}
+
+	private void doMouseMoveAction(MouseEvent e) {
+		int dataW = width - margins * 2;
+		int dataH = height - margins * 2;
+		if (e.x < margins || e.x > (this.width - margins)) {
+			this.markerXRatio = -1;
+		} else {
+			this.markerXRatio = (e.x - margins) * 1.0 / dataW;
+		}
+
+		if (e.y < margins || e.y > endH) {
+			this.markerYRatio = -1;
+		} else {
+			this.markerYRatio = (endH - e.y) * 1.0 / dataH;
+		}
+		this.redraw();
+	}
+
+	private MouseTrackListener doMouseExitAdapter = new MouseTrackAdapter() {
+
+		@Override
+		public void mouseExit(MouseEvent e) {
+			markerXRatio = -1;
+			markerYRatio = -1;
+			redraw();
+		}
+
+	};
+
+	private boolean isEqualDouble(double d1, double d2) {
+		return Math.abs(d1 - d2) < 0.000001;
 	}
 
 	public static void main(String[] args) {

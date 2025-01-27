@@ -65,7 +65,7 @@
 		<pdfbox.version>3.0.3</pdfbox.version>
 		<pdfviewfx.version>3.1.0</pdfviewfx.version>
 		<jackson.version>2.18.2</jackson.version>
-		<groovy.version>4.0.24</groovy.version>
+		<groovy.version>4.0.25</groovy.version>
 		<thumbnailator.version>0.4.20</thumbnailator.version>
 		<gson.version>2.11.0</gson.version>
 		<jna.version>5.16.0</jna.version>

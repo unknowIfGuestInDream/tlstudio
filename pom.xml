@@ -34,7 +34,7 @@
 		<maven.wagon.http.ssl.insecure>true</maven.wagon.http.ssl.insecure>
 		<maven.wagon.http.ssl.allowall>true</maven.wagon.http.ssl.allowall>
 		<lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
-		<flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
+		<flatten-maven-plugin.version>1.7.0</flatten-maven-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -64,8 +64,8 @@
 		<dom4j.version>2.1.4</dom4j.version>
 		<pdfbox.version>3.0.4</pdfbox.version>
 		<pdfviewfx.version>3.1.0</pdfviewfx.version>
-		<jackson.version>2.18.2</jackson.version>
-		<groovy.version>4.0.25</groovy.version>
+		<jackson.version>2.18.3</jackson.version>
+		<groovy.version>4.0.26</groovy.version>
 		<thumbnailator.version>0.4.20</thumbnailator.version>
 		<gson.version>2.12.1</gson.version>
 		<jna.version>5.16.0</jna.version>
@@ -73,7 +73,7 @@
 		<jaxb-runtime.version>4.0.5</jaxb-runtime.version>
 		<asm.version>9.7.1</asm.version>
 		<classgraph.version>4.8.179</classgraph.version>
-		<checker-qual.version>3.49.0</checker-qual.version>
+		<checker-qual.version>3.49.1</checker-qual.version>
 	</properties>
 
 <!--

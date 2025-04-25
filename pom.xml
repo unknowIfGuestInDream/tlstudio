@@ -64,7 +64,7 @@
         <dom4j.version>2.1.4</dom4j.version>
         <pdfbox.version>3.0.4</pdfbox.version>
         <pdfviewfx.version>3.1.0</pdfviewfx.version>
-        <jackson.version>2.18.3</jackson.version>
+        <jackson.version>2.19.0</jackson.version>
         <groovy.version>4.0.26</groovy.version>
         <thumbnailator.version>0.4.20</thumbnailator.version>
         <gson.version>2.13.0</gson.version>

@@ -1,4 +1,4 @@
-package com.tlcsdm.tlstudio.widgets.example;
+package com.tlcsdm.tlstudio.widgets.example.custom;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;

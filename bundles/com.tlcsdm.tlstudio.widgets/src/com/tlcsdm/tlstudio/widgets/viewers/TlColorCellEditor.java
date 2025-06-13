@@ -16,12 +16,12 @@ import org.eclipse.swt.widgets.Shell;
  * Override ${org.eclipse.jface.viewers.ColorCellEditor}. Now when you click on
  * the cell, a dialog pops up and the position is displayed in the cell.
  */
-public class QeColorCellEditor extends ColorCellEditor {
+public class TlColorCellEditor extends ColorCellEditor {
 
 	private Composite composite;
 	private RGB value;
 
-	public QeColorCellEditor(Composite parent) {
+	public TlColorCellEditor(Composite parent) {
 		super(parent);
 	}
 

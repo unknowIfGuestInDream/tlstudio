@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tlcsdm Widgets Snippets
+Bundle-SymbolicName: com.tlcsdm.tlstudio.widgets.snippets;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TLCSDM
+Automatic-Module-Name: com.tlcsdm.tlstudio.widgets.snippets
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Require-Bundle: com.tlcsdm.tlstudio.widgets,
+ org.eclipse.swt

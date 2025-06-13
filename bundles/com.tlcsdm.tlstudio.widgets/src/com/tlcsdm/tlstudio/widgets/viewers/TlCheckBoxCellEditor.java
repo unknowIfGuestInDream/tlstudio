@@ -8,11 +8,11 @@ import org.eclipse.swt.widgets.Control;
 /**
  * Used with AbstractCheckBoxCellLabelProvider
  */
-public class QeCheckBoxCellEditor extends CellEditor {
+public class TlCheckBoxCellEditor extends CellEditor {
 
 	boolean value = false;
 
-	public QeCheckBoxCellEditor(Composite parent) {
+	public TlCheckBoxCellEditor(Composite parent) {
 		super(parent);
 	}
 

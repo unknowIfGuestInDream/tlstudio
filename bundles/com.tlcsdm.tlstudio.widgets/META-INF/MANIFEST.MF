@@ -7,7 +7,8 @@ Export-Package: com.tlcsdm.tlstudio.widgets.color,
  com.tlcsdm.tlstudio.widgets.custom,
  com.tlcsdm.tlstudio.widgets.model,
  com.tlcsdm.tlstudio.widgets.viewers,
- com.tlcsdm.tlstudio.widgets.window
+ com.tlcsdm.tlstudio.widgets.window,
+ com.tlcsdm.tlstudio.widgets.utils
 Bundle-Vendor: TLCSDM
 Automatic-Module-Name: com.tlcsdm.tlstudio.widgets
 Bundle-ActivationPolicy: lazy

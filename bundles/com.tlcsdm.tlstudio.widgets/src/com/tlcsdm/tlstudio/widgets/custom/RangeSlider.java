@@ -16,17 +16,17 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 
 /**
- * The QeRangeSlider control supports for two 'thumbs', rather than one. A thumb
+ * The RangeSlider control supports for two 'thumbs', rather than one. A thumb
  * is the non-technical name for the draggable area inside the Slider.
  *
  * <p>
- * Because the QeRangeSlider has two thumbs, it also has a few additional rules
+ * Because the RangeSlider has two thumbs, it also has a few additional rules
  * and user interactions:
  *
  * <ol>
  * <li>The 'lower value' thumb can not move past the 'higher value' thumb.
  * Whereas the Slider control only has one.
- * <li>the QeRangeSlider has a {@link #lowerValue low value} and a
+ * <li>the RangeSlider has a {@link #lowerValue low value} and a
  * {@link #upperValue high value}, represented by the 'low value' and 'high
  * value' thumbs.
  * <li>The area between the low and high values represents the allowable range.
@@ -35,14 +35,14 @@ import org.eclipse.swt.widgets.Event;
  *
  * <h3>Code Samples</h3>
  * <p>
- * Instantiating a QeRangeSlider is simple. The first decision is to decide
+ * Instantiating a RangeSlider is simple. The first decision is to decide
  * whether a horizontal or a vertical track is more appropriate. By default
- * QeRangeSlider instances are horizontal, but this can be changed by setting
- * the {@link #orientation}.
+ * RangeSlider instances are horizontal, but this can be changed by setting the
+ * {@link #orientation}.
  * 
  * <pre>{@code
- * QeRangeSlider hSlider = new QeRangeSlider(this, SWT.HORIZONTAL);
- * QeRangeSlider vSlider = new QeRangeSlider(this, SWT.VERTICAL);
+ * RangeSlider hSlider = new RangeSlider(this, SWT.HORIZONTAL);
+ * RangeSlider vSlider = new RangeSlider(this, SWT.VERTICAL);
  * }
  * <p>
  * Once the orientation is determined, the next most important decision is to
@@ -54,11 +54,11 @@ import org.eclipse.swt.widgets.Event;
  * values. All four values are required in all circumstances, 
  * and integer precision is used by default.
  * <p>
- * For example, here is a simple horizontal QeRangeSlider that has a minimum value
+ * For example, here is a simple horizontal RangeSlider that has a minimum value
  * of 0, a maximum value of 100, a low value of 10 and a high value of 90:
  *
  * <pre>{@code
- * final QeRangeSlider hSlider = new QeRangeSlider(this, SWT.HORIZONTAL);
+ * final RangeSlider hSlider = new RangeSlider(this, SWT.HORIZONTAL);
  * hSlider.setMinimum(0);
  * hSlider.setMaximum(100);
  * hSlider.setLowerValue(10);
@@ -66,7 +66,7 @@ import org.eclipse.swt.widgets.Event;
  * }</pre>
  *
  * <p>
- * To configure listener of QeRangeSlider value:
+ * To configure listener of RangeSlider value:
  *
  * <pre>
  * {@code

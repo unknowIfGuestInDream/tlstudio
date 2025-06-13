@@ -20,7 +20,7 @@ import org.osgi.framework.FrameworkUtil;
 public class WidgetsUtility {
 	public static final String PLUGINID = "com.tlcsdm.tlstudio.widgets";
 
-	private WidgetsUtility() {
+	public WidgetsUtility() {
 		//// constructor
 	}
 

@@ -13,8 +13,8 @@ import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Composite;
 
 /**
- * The QeSlider Control is used to display a continuous or discrete range of
- * valid numeric choices and allows the user to interact with the control. It is
+ * The Slider Control is used to display a continuous or discrete range of valid
+ * numeric choices and allows the user to interact with the control. It is
  * typically represented visually as having a "track" and a "knob" or "thumb"
  * which is dragged within the track.
  * <p>
@@ -30,19 +30,19 @@ import org.eclipse.swt.widgets.Composite;
  * and whose value defaults to 50:
  *
  * <pre>
- * QeSlider slider = new QeSlider(this, SWT.NONE);
+ * Slider slider = new Slider(this, SWT.NONE);
  * slider.setMinimum(0);
  * slider.setMaximum(100);
  * slider.setValue(50);
  * </pre>
  *
  * <p>
- * By default, QeSlider's value only supports integers. If decimal precision is
+ * By default, Slider's value only supports integers. If decimal precision is
  * required, it can be set through {@link #setNumberFormat}.The next example
  * shows a slider that supports 4 digits of precision, ranging from 0 to 1::
  *
  * <pre>{@code
- * QeSlider slider = new QeSlider(this, SWT.NONE);
+ * Slider slider = new Slider(this, SWT.NONE);
  * slider.setMinimum(0);
  * slider.setMaximum(1);
  * slider.setValue(0.5);
@@ -51,7 +51,7 @@ import org.eclipse.swt.widgets.Composite;
  * 
  * 
  * <p>
- * QeSlider also supports customizing the color of the slider, the color of the
+ * Slider also supports customizing the color of the slider, the color of the
  * selected part: a, the color of the unselected part: b, the color of the
  * button: c
  * <ol>
@@ -67,7 +67,7 @@ import org.eclipse.swt.widgets.Composite;
  * }
  * 
  * <p>
- * To configure listener of QeSlider value:
+ * To configure listener of Slider value:
  *
  * <pre>
  * {@code

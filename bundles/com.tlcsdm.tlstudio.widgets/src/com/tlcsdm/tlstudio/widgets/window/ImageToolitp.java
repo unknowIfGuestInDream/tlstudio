@@ -12,6 +12,14 @@ import org.eclipse.swt.widgets.Label;
 
 /**
  * A tool tip to display an image and that reacts to user clicks.
+ * 
+ * <pre>
+ * {@code
+ * Text txt = new Text(shell, SWT.BORDER); 
+ * ImageDescriptor img = ComponentPlugin.getImageDescriptor("/resource/demo.png");
+ * ImageToolitp tip = new ImageToolitp(txt, img);
+ * tip.setHideOnMouseDown(true);
+ * }
  */
 public class ImageToolitp extends ToolTip {
 

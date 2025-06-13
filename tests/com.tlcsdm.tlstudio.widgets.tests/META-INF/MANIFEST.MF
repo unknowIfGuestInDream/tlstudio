@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tlcsdm Widgets Tests
+Bundle-SymbolicName: com.tlcsdm.tlstudio.widgets.tests
+Bundle-Version: 1.0.0.qualifier
+Eclipse-BundleShape: dir
+Bundle-Vendor: TLCSDM
+Automatic-Module-Name: com.tlcsdm.tlstudio.widgets.tests
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Require-Bundle: org.junit,
+ org.eclipse.swt,
+ com.tlcsdm.tlstudio.widgets

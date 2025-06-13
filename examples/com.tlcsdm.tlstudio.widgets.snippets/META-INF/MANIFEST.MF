@@ -8,6 +8,11 @@ Automatic-Module-Name: com.tlcsdm.tlstudio.widgets.snippets
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: org.eclipse.swt,
+ org.eclipse.jface,
+ org.eclipse.jface.databinding,
+ org.eclipse.core.databinding,
+ org.eclipse.core.databinding.beans,
+ org.eclipse.core.databinding.property,
  org.eclipse.osgi,
  org.eclipse.core.runtime,
  com.tlcsdm.tlstudio.widgets

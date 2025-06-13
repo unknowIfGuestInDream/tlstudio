@@ -71,6 +71,9 @@ public class SpinnerCellEditor extends CellEditor {
 			}
 			return;
 		}
+		if (keyEvent.character == SWT.ESC) {
+			fireCancelEditor();
+		}
 		super.keyReleaseOccured(keyEvent);
 	}
 

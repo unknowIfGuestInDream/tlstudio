@@ -10,6 +10,9 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
+/**
+ * 支持收缩展开的面板.
+ */
 public class CollapsibleComposite extends Composite {
 
 	public enum Direction {

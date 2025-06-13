@@ -7,9 +7,6 @@ import java.util.Locale;
 
 import org.eclipse.jface.resource.FontDescriptor;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.ScrolledComposite;
-import org.eclipse.swt.events.ControlAdapter;
-import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseTrackAdapter;
 import org.eclipse.swt.events.MouseTrackListener;
@@ -18,11 +15,8 @@ import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
 
 import com.tlcsdm.tlstudio.widgets.WidgetsUtility;
 import com.tlcsdm.tlstudio.widgets.custom.AbstractCustomCanvas;
@@ -522,39 +516,6 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 
 	private boolean isEqualDouble(double d1, double d2) {
 		return Math.abs(d1 - d2) < 0.000001;
-	}
-
-	public static void main(String[] args) {
-		Display display = new Display();
-
-		Shell shell = new Shell(display);
-		shell.setText("Chromaticity Diagram");
-		shell.setLayout(new GridLayout(1, false));
-		shell.setSize(800, 600);
-		ScrolledComposite scrolledComposite = new ScrolledComposite(shell, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		scrolledComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
-		scrolledComposite.setExpandHorizontal(true);
-		scrolledComposite.setExpandVertical(true);
-		scrolledComposite.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
-
-		ChromaticityDiagram cd = new CIE1931ChromaticityDiagram(scrolledComposite, SWT.NONE);
-		cd.setCalculatePoint(0.3, 0.4);
-
-		scrolledComposite.setContent(cd);
-		scrolledComposite.setMinSize(cd.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-		scrolledComposite.addControlListener(new ControlAdapter() {
-			@Override
-			public void controlResized(final ControlEvent e) {
-				scrolledComposite.setMinSize(cd.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-			}
-		});
-
-		shell.open();
-		while (!shell.isDisposed()) {
-			if (!display.readAndDispatch())
-				display.sleep();
-		}
-		display.dispose();
 	}
 
 }

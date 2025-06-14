@@ -45,7 +45,7 @@
         <commons-lang3.version>3.17.0</commons-lang3.version>
         <commons-io.version>2.19.0</commons-io.version>
         <commons-configuration2.version>2.12.0</commons-configuration2.version>
-        <commons-beanutils.version>1.10.1</commons-beanutils.version>
+        <commons-beanutils.version>1.11.0</commons-beanutils.version>
         <commons-csv.version>1.14.0</commons-csv.version>
         <commons-compress.version>1.27.1</commons-compress.version>
         <commons-exec.version>1.5.0</commons-exec.version>
@@ -65,7 +65,7 @@
         <pdfbox.version>3.0.5</pdfbox.version>
         <pdfviewfx.version>3.1.0</pdfviewfx.version>
         <jackson.version>2.19.0</jackson.version>
-        <groovy.version>4.0.26</groovy.version>
+        <groovy.version>4.0.27</groovy.version>
         <thumbnailator.version>0.4.20</thumbnailator.version>
         <gson.version>2.13.1</gson.version>
         <jna.version>5.17.0</jna.version>
@@ -73,7 +73,7 @@
         <jaxb-runtime.version>4.0.5</jaxb-runtime.version>
         <asm.version>9.8</asm.version>
         <classgraph.version>4.8.179</classgraph.version>
-        <checker-qual.version>3.49.3</checker-qual.version>
+        <checker-qual.version>3.49.4</checker-qual.version>
     </properties>
 
 <!--

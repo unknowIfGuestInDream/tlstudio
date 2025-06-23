@@ -34,7 +34,7 @@
         <maven.wagon.http.ssl.insecure>true</maven.wagon.http.ssl.insecure>
         <maven.wagon.http.ssl.allowall>true</maven.wagon.http.ssl.allowall>
         <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
-        <flatten-maven-plugin.version>1.7.0</flatten-maven-plugin.version>
+        <flatten-maven-plugin.version>1.7.1</flatten-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

@@ -7,6 +7,7 @@ import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseMoveListener;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
@@ -160,6 +161,9 @@ public class PanScrolledComposite extends ScrolledComposite {
 			attachedContent.removeMouseListener(mouseAdapter);
 			attachedContent.removeMouseMoveListener(mouseMoveListener);
 		}
+		if (dragCursor != null && !dragCursor.isDisposed()) {
+			dragCursor.dispose();
+		}
 		super.dispose();
 	}
 
@@ -172,7 +176,7 @@ public class PanScrolledComposite extends ScrolledComposite {
 			return new Point(0, 0);
 		}
 		Point contentSize = content.getSize();
-		org.eclipse.swt.graphics.Rectangle clientRect = getClientArea();
+		Rectangle clientRect = getClientArea();
 		Point clientSize = new Point(clientRect.width, clientRect.height);
 		int maxX = Math.max(0, contentSize.x - clientSize.x);
 		int maxY = Math.max(0, contentSize.y - clientSize.y);

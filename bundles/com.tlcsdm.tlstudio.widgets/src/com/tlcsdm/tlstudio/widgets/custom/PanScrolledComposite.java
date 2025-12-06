@@ -161,9 +161,6 @@ public class PanScrolledComposite extends ScrolledComposite {
 			attachedContent.removeMouseListener(mouseAdapter);
 			attachedContent.removeMouseMoveListener(mouseMoveListener);
 		}
-		if (dragCursor != null && !dragCursor.isDisposed()) {
-			dragCursor.dispose();
-		}
 		super.dispose();
 	}
 

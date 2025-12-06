@@ -33,6 +33,10 @@ public class PanScrolledCompositeSnippet {
 				.getResourceAsStream("com/tlcsdm/tlstudio/widgets/example/custom/panscrolled/park.jpg"));
 		image.setImage(icon);
 
+//		Image icon = new Image(display, BadgedLabelSnippet.class.getClassLoader()
+//				.getResourceAsStream("com/tlcsdm/tlstudio/widgets/example/custom/chips/dirk.png"));
+//		image.setImage(icon);
+
 		scrolledComposite.setContent(image);
 		scrolledComposite.setMinSize(image.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 

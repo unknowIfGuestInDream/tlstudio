@@ -10,6 +10,7 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.ScrollBar;
 
 /**
  * A ScrolledComposite that supports click-and-drag panning and changes the
@@ -42,17 +43,30 @@ public class PanScrolledComposite extends ScrolledComposite {
 			@Override
 			public void mouseDown(MouseEvent e) {
 				if (e.button == 1) {
-					// store start point in display coordinates to avoid coordinate shifts while
-					// panning
-					Point abs = Display.getCurrent().map((Control) e.widget, null, e.x, e.y);
-					dragStartX = abs.x;
-					dragStartY = abs.y;
-					// record that button is pressed; do not start drag yet until movement exceeds
-					// threshold
-					pressed = true;
-					dragging = false;
-					// change cursor immediately on press
-					setCursor(dragCursor);
+					ScrollBar vBar = getVerticalBar();
+					ScrollBar hBar = getHorizontalBar();
+					boolean hasVbar = vBar != null && vBar.isEnabled() && vBar.isVisible();
+					boolean hasHbar = hBar != null && hBar.isEnabled() && hBar.isVisible();
+					if (hasVbar || hasHbar) {
+						// store start point in display coordinates to avoid coordinate shifts while
+						// panning
+						Point abs = Display.getCurrent().map((Control) e.widget, null, e.x, e.y);
+						dragStartX = abs.x;
+						dragStartY = abs.y;
+						// record that button is pressed; do not start drag yet until movement exceeds
+						// threshold
+						pressed = true;
+						dragging = false;
+						// change cursor immediately on press
+						if (hasVbar && hasHbar) {
+							dragCursor = Display.getCurrent().getSystemCursor(SWT.CURSOR_SIZEALL);
+						} else if (hasVbar) {
+							dragCursor = Display.getCurrent().getSystemCursor(SWT.CURSOR_SIZENS);
+						} else if (hasHbar) {
+							dragCursor = Display.getCurrent().getSystemCursor(SWT.CURSOR_SIZEWE);
+						}
+						setCursor(dragCursor);
+					}
 				}
 			}
 

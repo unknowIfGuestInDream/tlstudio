@@ -1023,8 +1023,7 @@ public class RangeSlider extends AbstractCustomCanvas {
 	 * @see #removeSelectionListener
 	 */
 	public void addSelectionListener(final SelectionListener listener) {
-		checkWidget();
-		addSelectionListener(this, listener);
+		addTypedListener(listener, SWT.Selection);
 	}
 
 	/**
@@ -1140,8 +1139,7 @@ public class RangeSlider extends AbstractCustomCanvas {
 	 * @see #addSelectionListener
 	 */
 	public void removeSelectionListener(final SelectionListener listener) {
-		checkWidget();
-		removeSelectionListener(this, listener);
+		removeTypedListener(SWT.Selection, listener);
 	}
 
 	/**

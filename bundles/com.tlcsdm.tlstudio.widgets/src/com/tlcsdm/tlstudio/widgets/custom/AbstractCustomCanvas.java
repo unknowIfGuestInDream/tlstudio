@@ -6,7 +6,6 @@ import java.lang.reflect.Method;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Resource;
@@ -16,7 +15,6 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.TypedListener;
 
 import com.tlcsdm.tlstudio.widgets.WidgetsUtility;
 
@@ -93,13 +91,14 @@ public abstract class AbstractCustomCanvas extends Canvas {
 	 * @param control  control on which the selection listener is added
 	 * @param listener listener to add
 	 */
-	protected void addSelectionListener(final Control control, final SelectionListener listener) {
-		if (listener == null) {
-			SWT.error(SWT.ERROR_NULL_ARGUMENT);
-		}
-		TypedListener typedListener = new TypedListener(listener);
-		control.addListener(SWT.Selection, typedListener);
-	}
+	// For swt version < 3.126.0
+//	protected void addSelectionListener(final Control control, final SelectionListener listener) {
+//		if (listener == null) {
+//			SWT.error(SWT.ERROR_NULL_ARGUMENT);
+//		}
+//		TypedListener typedListener = new TypedListener(listener);
+//		control.addListener(SWT.Selection, typedListener);
+//	}
 
 	/**
 	 * Remove a <code>SelectionListener</code> of a given Control
@@ -107,20 +106,21 @@ public abstract class AbstractCustomCanvas extends Canvas {
 	 * @param control  control on which the selection listener is removed
 	 * @param listener listener to remove
 	 */
-	protected void removeSelectionListener(final Control control, final SelectionListener listener) {
-		if (listener == null) {
-			SWT.error(SWT.ERROR_NULL_ARGUMENT);
-		}
-		final Listener[] listeners = control.getListeners(SWT.Selection);
-		for (Listener l : listeners) {
-			if (l instanceof TypedListener typedListener) {
-				if (typedListener.getEventListener() == listener) {
-					callMethod(control, "removeListener", SWT.Selection, typedListener.getEventListener());
-					return;
-				}
-			}
-		}
-	}
+	// For swt version < 3.126.0
+//	protected void removeSelectionListener(final Control control, final SelectionListener listener) {
+//		if (listener == null) {
+//			SWT.error(SWT.ERROR_NULL_ARGUMENT);
+//		}
+//		final Listener[] listeners = control.getListeners(SWT.Selection);
+//		for (Listener l : listeners) {
+//			if (l instanceof TypedListener typedListener) {
+//				if (typedListener.getEventListener() == listener) {
+//					callMethod(control, "removeListener", SWT.Selection, typedListener.getEventListener());
+//					return;
+//				}
+//			}
+//		}
+//	}
 
 	/**
 	 * Call a method using introspection (so ones can call a private or protected

@@ -148,7 +148,7 @@ public class ProgressCircle extends AbstractCustomCanvas {
 
 		gc.setBackground(getForeground());
 		gc.fillPath(path);
-		pathHighlight.dispose();
+		path.dispose();
 
 		// Draw the hole
 		gc.setBackground(getBackground());
@@ -178,7 +178,6 @@ public class ProgressCircle extends AbstractCustomCanvas {
 			final int x = MARGIN + (circleSize - textSize.x) / 2;
 			final int y = (circleSize - textSize.y) / 2;
 			gc.drawText(text, x, y, true);
-			path.dispose();
 		}
 	}
 

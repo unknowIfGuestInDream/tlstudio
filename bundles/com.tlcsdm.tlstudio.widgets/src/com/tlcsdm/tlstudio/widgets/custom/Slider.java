@@ -364,7 +364,7 @@ public class Slider extends AbstractCustomCanvas {
 		checkWidget();
 		if (minimum > maximum) {
 			SWT.error(SWT.ERROR_INVALID_ARGUMENT, new IllegalArgumentException(
-					String.format("Value %d is greater than the maximum value (%d)", minimum, maximum)));
+					String.format("Value %f is greater than the maximum value (%f)", minimum, maximum)));
 		}
 		this.minimum = minimum;
 		redraw();
@@ -393,7 +393,7 @@ public class Slider extends AbstractCustomCanvas {
 		checkWidget();
 		if (maximum < minimum) {
 			SWT.error(SWT.ERROR_INVALID_ARGUMENT, new IllegalArgumentException(
-					String.format("Value %d is lower than the minimum value (%d)", maximum, minimum)));
+					String.format("Value %f is lower than the minimum value (%f)", maximum, minimum)));
 		}
 		this.maximum = maximum;
 		redraw();
@@ -422,7 +422,7 @@ public class Slider extends AbstractCustomCanvas {
 		checkWidget();
 		if (value < minimum || value > maximum) {
 			SWT.error(SWT.ERROR_INVALID_ARGUMENT, new IllegalArgumentException(
-					String.format("Value %d is not int the range [%d - %d]", value, minimum, maximum)));
+					String.format("Value %f is not in the range [%f - %f]", value, minimum, maximum)));
 		}
 		this.value = value;
 		xPosition = -1;

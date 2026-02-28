@@ -26,6 +26,8 @@ import org.eclipse.swt.widgets.Monitor;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Widget;
 
+import com.tlcsdm.tlstudio.widgets.WidgetsUtility;
+
 /**
  * This class is a singleton that provides useful methods
  */
@@ -263,6 +265,10 @@ public class SWTGraphicUtil {
 			}
 		}
 
+		if (activeMonitor == null) {
+			activeMonitor = shell.getDisplay().getPrimaryMonitor();
+		}
+
 		final Rectangle bounds = activeMonitor.getBounds();
 		final Rectangle rect = shell.getBounds();
 		final int x = bounds.x + (bounds.width - rect.width) / 2;
@@ -306,7 +312,7 @@ public class SWTGraphicUtil {
 		try {
 			new HTMLStyledTextParser(styledText).parse();
 		} catch (final IOException e) {
-			e.printStackTrace();
+			WidgetsUtility.logException(e);
 		}
 	}
 

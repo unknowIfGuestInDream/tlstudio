@@ -48,6 +48,9 @@ public class WidgetsUtility {
 
 	public static URL getEntry(String pluginId, String path) {
 		Bundle bundle = Platform.getBundle(pluginId);
+		if (bundle == null) {
+			return null;
+		}
 		return bundle.getEntry(path);
 	}
 

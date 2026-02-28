@@ -261,13 +261,12 @@ public class ChromaticityDiagram extends AbstractCustomCanvas {
 		endH = (int) (stepH * grid + margins);
 		int endW = (int) (stepW * grid + margins);
 		if (title != null && !title.isEmpty()) {
-			GC tgc = new GC(this);
-			int titleWidth = tgc.textExtent(title).x;
-			tgc.dispose();
 			gc.setFont(commentsFont);
+			int titleWidth = gc.textExtent(title).x;
 			gc.setForeground(textColor);
 			gc.drawString(title, (width - margins * 2 - titleWidth) / 2, 3);
 		}
+		commentsFont.dispose();
 		if (legend != null && !legend.isEmpty()) {
 			gc.setFont(dataFont);
 			gc.drawString(legend, 20, endH + margins - 5);

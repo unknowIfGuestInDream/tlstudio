@@ -36,6 +36,7 @@ public class CIE1931ChromaticityDiagram extends ChromaticityDiagram {
 		return new Color((int) (rgb[0] * 255), (int) (rgb[1] * 255), (int) (rgb[2] * 255));
 	}
 
+	@Override
 	protected boolean checkValidPoint(double x, double y) {
 		List<CIEData> data = CIEData1931.getInstance();
 		double[][] polygon = new double[data.size()][2];

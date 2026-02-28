@@ -157,7 +157,6 @@ public class FloatingText extends Composite {
 			public Point computeSize(int pWHint, int pHHint, boolean pChanged) {
 				Point result = super.computeSize(pWHint, pHHint, pChanged);
 				result.y = ((GridData) fLabel.getLayoutData()).heightHint;
-				result.y = result.y;
 				return result;
 			}
 		};
@@ -206,6 +205,7 @@ public class FloatingText extends Composite {
 		while (fontSize > 2) {
 			int textHeight = gc.textExtent("PQR").y;
 			if (textHeight <= label.getBounds().height) {
+				gc.dispose();
 				return font; // Found a fitting font
 			}
 			// Cleanup and decrease font size
@@ -259,9 +259,6 @@ public class FloatingText extends Composite {
 
 	private String getMessage() {
 		String message = fText.getMessage();
-		if (message == null || message.trim().isEmpty()) {
-			message = fText.getMessage();
-		}
 		return message == null ? "" : message.trim();
 	}
 

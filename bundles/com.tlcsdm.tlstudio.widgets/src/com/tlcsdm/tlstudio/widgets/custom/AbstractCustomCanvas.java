@@ -158,6 +158,10 @@ public abstract class AbstractCustomCanvas extends Canvas {
 				currentClass = currentClass.getSuperclass();
 			}
 		}
+		if (method == null) {
+			WidgetsUtility.warn("Method not found: " + methodName);
+			return null;
+		}
 		try {
 			method.setAccessible(true);
 			return method.invoke(object, args);
